@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames';
 
-import { Nav, SocialMedia } from '../';
+import { Nav, SocialMedia, Logo } from '../';
 
 import styles from './Footer.module.scss';
 
@@ -12,7 +12,7 @@ export const Footer = () => {
       <div className={classNames('container-fluid', styles['container'])}>
         <div className={styles['footer__logo']}>
           <Link href='/'>
-            <Image src={'/images/logo/logo-2.svg'} width={'116'} height={'60'} alt={'Serai'} />
+            <Image src={'/images/logo/logo-2.svg'} width={'140'} height={'40'} alt={'Volde'} />
           </Link>
         </div>
         <div className={styles['footer__nav']}>
@@ -20,21 +20,21 @@ export const Footer = () => {
         </div>
 
         <div className={styles['footer__address']}>
-          <span>SERAI HQ</span>
-          <p>Serai AG <br />
+          <span>Volde HQ</span>
+          <p>Volde AG <br />
           Dufourstrasse 49 8008 Zürich<br />
           +41 44 688 01 68</p>
 
-          <span>SERAI ISTANBUL REPRESENTATION</span>
+          <span>Volde ISTANBUL REPRESENTATION</span>
           <p>Torun Center, D-Blok, K:10 D:43<br />
           Sisli Istanbul<br />
           +90 212 922 15 23</p>
         </div>
         <div className={styles['footer__social-media']}>
-          <SocialMedia title />
+          <SocialMedia />
         </div>
         <div className={styles['footer__copyright']}>
-          Copyright &copy; 2022 Serai
+          Copyright &copy; 2022 Volde
         </div>
         <div className={styles['footer__terms']}>
           <Link href='/terms-of-service'>Terms of Service</Link>

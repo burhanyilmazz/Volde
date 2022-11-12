@@ -147,30 +147,6 @@ ul {
   }
 }
 
-.snap {
-  scroll-snap-type: y mandatory;
-
-  @media screen and (max-width: 1024px) {
-    scroll-padding-top: 79px;
-  }
-
-  section {
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    position: relative;
-
-    @media screen and (max-width: 1024px) {
-      height: calc(100vh - 79px);
-    }
-  }
-
-  footer {
-    scroll-snap-align: start;
-  }
-}
-
 .swiper {
   &-pagination {
     display: flex;

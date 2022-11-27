@@ -1,34 +1,10 @@
 .social-media {
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    color: #171454;
-    margin-bottom: 20px;
-
-    @media screen and (max-width: 1024px) {
-      display: none;
-    }
-  }
-
   ul {
     display: flex;
-    gap: 8px;
+    gap: 58px;
     a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px;
-      background: #171454;
-      border-radius: 20px;
-      color: #fff;
+      color: #A7A8A9;
       transition: all 0.5s ease;
-
-      @media screen and (max-width: 1024px) {
-        width: 48px;
-        height: 48px;
-      }
     }
   }
 }

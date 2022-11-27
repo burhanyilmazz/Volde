@@ -12,8 +12,9 @@ export const SocialMedia = (props) => {
       {title && <p>Follow Us</p> }
       <ul>
         <li><a href="#" target="_blank" aria-label='Volde Facebook' rel="noreferrer"><Icon icon="facebook" /></a></li>
-        <li><a href="#" target="_blank" aria-label='Volde Twitter' rel="noreferrer"><Icon icon="twitter" /></a></li>
-        <li><a href="#" target="_blank" aria-label='Volde Linkedin' rel="noreferrer"><Icon icon="google" /></a></li>
+        <li><a href="#" target="_blank" aria-label='Volde Linkedin' rel="noreferrer"><Icon icon="linkedin" /></a></li>
+        <li><a href="#" target="_blank" aria-label='Volde Instagram' rel="noreferrer"><Icon icon="instagram" /></a></li>
+        <li><a href="#" target="_blank" aria-label='Volde Youtube' rel="noreferrer"><Icon icon="youtube" /></a></li>
       </ul>
     </div>
   )

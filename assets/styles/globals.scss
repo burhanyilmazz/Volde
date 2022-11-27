@@ -4,7 +4,7 @@
 
 body {
   background: #fff;
-  color: #171454;
+  color: #000;
   font-family: "Gotham", sans-serif;
   font-weight: 400;
   padding: 0;
@@ -184,23 +184,6 @@ ul {
   }
 }
 
-.slider__carousel {
-  .swiper-button {
-    &-prev {
-      left: calc(25% + 60px) !important;
-      @media screen and (max-width: 1024px) {
-        display: none;
-      }
-    }
-    &-next {
-      right: calc(25% + 60px) !important;
-      @media screen and (max-width: 1024px) {
-        display: none;
-      }
-    }
-  }
-}
-
 .carousel {
   &__slider {
     width: 100%;
@@ -223,14 +206,6 @@ ul {
         }
         &-next {
           right: 30px !important;
-        }
-      }
-    }
-
-    &--list {
-      .swiper {
-        &-pagination {
-          bottom: 240px !important;
         }
       }
     }

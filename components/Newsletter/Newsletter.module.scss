@@ -1,0 +1,64 @@
+.newsletter {
+  background: #e8e8e8;
+  position: relative;
+  padding: 50px 0 50px 140px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 400px);
+}
+
+.title {
+  margin-bottom: 30px;
+  h5 {
+    font-size: 30px;
+    line-height: 32px;
+    font-weight: 200;
+    span {
+      font-weight: 500;
+      display: block;
+    }
+  }
+}
+
+.form-input {
+  position: relative;
+}
+
+.input {
+  label {
+    transform: translate(40px, 30px) scale(1);
+  }
+  input {
+    padding-left: 40px;
+
+    &[data-dirty="true"],
+    &[data-dirty-important="true"],
+    &:focus {
+      & ~ label {
+        transform: translate(40px, 20px) scale(0.75);
+      }
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  color: #1f242b;
+  bottom: 13px;
+  &:before {
+    font-size: 30px;
+  }
+}
+
+.image {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+}
+
+.button {
+  margin-top: 80px;
+}

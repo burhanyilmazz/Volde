@@ -1,5 +1,6 @@
 export * from './Address';
 export * from './Button';
+export * from './Button2';
 export * from './Carousel';
 export * from './ContactForm';
 export * from './Footer';

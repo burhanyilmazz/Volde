@@ -26,7 +26,8 @@
 .image {
   position: absolute;
   right: 10px;
-  bottom: 0;
+  transform: translateY(-50%);
+  top: 200px;
 }
 
 .button {

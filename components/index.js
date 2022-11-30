@@ -16,3 +16,4 @@ export * from './ScrollIcon';
 export * from './SocialMedia';
 export * from './Newsletter';
 export * from './Library';
+export * from './CardBlog';

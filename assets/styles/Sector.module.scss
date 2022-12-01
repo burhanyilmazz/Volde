@@ -1,0 +1,36 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 124px 170px 85px;
+
+  h2 {
+    width: 100%;
+    text-align: left;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 86px;
+
+    .product__image {
+      display: flex;
+      gap: 40px;
+    }
+  }
+}

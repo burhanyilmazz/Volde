@@ -11,7 +11,7 @@ import 'react-tabs/style/react-tabs.css';
 
 import { Layout } from '../layout'
 import styles from '../assets/styles/Home.module.scss'
-import { Button, Button2, CardBlog } from '../components';
+import { Button, Button2, CardBlog, Card } from '../components';
 
 export default function Home() {
 
@@ -33,20 +33,143 @@ export default function Home() {
         <section className={styles['sector']}>
           <div className='container-fluid'>
             <h2><span>7</span> farklı sektörde <span>100</span>`den fazla çözüm sunuyoruz.</h2>
-            <h3>Sektörle / Çözümler</h3>
+            <h3><Image src={'/images/icons/filter.svg'} alt='Sektörle / Çözümler' width={'65'} height={'65'} /> Sektörle / Çözümler</h3>
 
             <div className={styles['sector__tabs']}>
-              <Tabs>
+              <Tabs className={styles['tabs']} selectedTabClassName={styles['tab--selected']}>
                 <TabList>
-                  <Tab>Title 1</Tab>
-                  <Tab>Title 2</Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/chemical.svg'} alt='Kimya' width={'39'} height={'69'} /></div>
+                      <span>Kimya</span>
+                    </div>
+                  </Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/detergent.svg'} alt='Deterjan' width={'51'} height={'70'} /></div>
+                      <span>Deterjan</span>
+                    </div>
+                  </Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/plastic.svg'} alt='Plastik' width={'26'} height={'70'} /></div>
+                      <span>Plastik</span>
+                    </div>
+                  </Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/cable.svg'} alt='Kablo' width={'67'} height={'70'} /></div>
+                      <span>Kablo</span>
+                    </div>
+                  </Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/coal.svg'} alt='Maden & Mineral' width={'52'} height={'70'} /></div>
+                      <span>Maden & Mineral</span>
+                    </div>
+                  </Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/rubber.svg'} alt='Lastik & Kauçuk' width={'70'} height={'70'} /></div>
+                      <span>Lastik & Kauçuk</span>
+                    </div>
+                  </Tab>
+                  <Tab className={styles['tab']}>
+                    <div className={styles['tab__item']}>
+                      <div><Image src={'/images/icons/food.svg'} alt='Gıda & Yem' width={'67'} height={'66'} /></div>
+                      <span>Gıda & Yem</span>
+                    </div>
+                  </Tab>
                 </TabList>
 
-                <TabPanel>
-                  <h2>Any content 1</h2>
+                <TabPanel className={styles['tab__content']}>
+                  <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
                 </TabPanel>
-                <TabPanel>
-                  <h2>Any content 2</h2>
+                <TabPanel className={styles['tab__content']}>
+                  <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
+                </TabPanel>
+                <TabPanel className={styles['tab__content']}>
+                <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
+                </TabPanel>
+                <TabPanel className={styles['tab__content']}>
+                <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
+                </TabPanel>
+                <TabPanel className={styles['tab__content']}>
+                <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
+                </TabPanel>
+                <TabPanel className={styles['tab__content']}>
+                  <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
+                </TabPanel>
+                <TabPanel className={styles['tab__content']}>
+                <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
                 </TabPanel>
               </Tabs>
             </div>

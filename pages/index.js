@@ -11,14 +11,16 @@ import 'react-tabs/style/react-tabs.css';
 
 import { Layout } from '../layout'
 import styles from '../assets/styles/Home.module.scss'
-import { Button, Button2, CardBlog, Card } from '../components';
+import { Button, Button2, CardBlog, Card, Carousel } from '../components';
 
 export default function Home() {
 
   return (
     <>
       <Layout>
-
+        <section className={styles['carousel']}>
+          <Carousel />
+        </section>
         <section className={styles['block']}>
           <div  className={styles['block__content']}>
             <h2>her zaman<br /><span>daha fazlası<br />mümkün!</span></h2>

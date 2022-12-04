@@ -221,35 +221,55 @@ export default function Home() {
           </div>
 
           <div className={styles['sector__accordion']}>
-            <Accordion allowZeroExpanded>
-              <AccordionItem dangerouslySetExpanded={true}>
+            <Accordion allowZeroExpanded preExpanded={["1"]}>
+              <AccordionItem uuid="1" className={styles['accordion']}>
                   <AccordionItemHeading>
                       <AccordionItemButton>
-                          What harsh truths do you prefer to ignore?
+                        <div className={styles['accordion__item']}>
+                          <div><Image src={'/images/icons/chemical.svg'} alt='Kimya' width={'39'} height={'69'} /></div>
+                          <span>Kimya</span>
+                        </div>
                       </AccordionItemButton>
                   </AccordionItemHeading>
-                  <AccordionItemPanel>
-                      <p>
-                          Exercitation in fugiat est ut ad ea cupidatat ut in
-                          cupidatat occaecat ut occaecat consequat est minim minim
-                          esse tempor laborum consequat esse adipisicing eu
-                          reprehenderit enim.
-                      </p>
+                  <AccordionItemPanel className={styles['accordion__panel']}>
+                    <div className={styles['card-list']}>
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                    </div>
                   </AccordionItemPanel>
               </AccordionItem>
-
-              <AccordionItem>
+              <AccordionItem uuid="2" className={styles['accordion']}>
                   <AccordionItemHeading>
                       <AccordionItemButton>
-                          Is free will real or just an illusion?
+                        <div className={styles['accordion__item']}>
+                          <div><Image src={'/images/icons/detergent.svg'} alt='Deterjan' width={'51'} height={'70'} /></div>
+                          <span>Deterjan</span>
+                        </div>
                       </AccordionItemButton>
                   </AccordionItemHeading>
-                  <AccordionItemPanel>
-                      <p>
-                          In ad velit in ex nostrud dolore cupidatat consectetur
-                          ea in ut nostrud velit in irure cillum tempor laboris
-                          sed adipisicing eu esse duis nulla non.
-                      </p>
+                  <AccordionItemPanel className={styles['accordion__panel']}>
+                    <div className={styles['card-list']}>
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                    </div>
                   </AccordionItemPanel>
               </AccordionItem>
           </Accordion>

@@ -1,0 +1,29 @@
+.career {
+  display: flex;
+  background: #F8F7F7;
+
+  &__content {
+    background: url("/images/line-2.svg") right bottom #F8F7F7 no-repeat;
+    width: 50%;
+    padding: 370px 250px 335px 170px;
+
+    h2 {
+      font-size: 32px;
+      line-height: 40px;
+      font-weight: 400;
+    }
+  }
+
+  &.white {
+    background: #fff;
+
+    .career__content {
+      background: url("/images/line-2.svg") right bottom #fff no-repeat;
+    }
+  }
+
+  &__image {
+    position: fixed;
+    right: 0;
+  }
+}

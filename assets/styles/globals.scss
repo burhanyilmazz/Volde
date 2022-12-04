@@ -321,3 +321,16 @@ ul {
     }
   }
 }
+
+.captcha {
+  display: inline-flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+  }
+
+  pre {
+    display: none;
+  }
+}

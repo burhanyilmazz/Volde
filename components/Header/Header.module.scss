@@ -4,4 +4,11 @@
   left: 0;
   z-index: 9;
   padding: 33px 25px;
+  transition: all 0.5s ease;
+}
+
+.logo {
+  img {
+    transition: all 0.5s ease;
+  }
 }

@@ -1,10 +1,21 @@
+import { useEffect } from 'react';
 import Image from 'next/image'
 import classNames from 'classnames';
+import Headroom from 'headroom.js';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 import 'swiper/css';
 import 'react-tabs/style/react-tabs.css';
@@ -16,9 +27,32 @@ import Link from 'next/link'
 
 export default function Home() {
 
+  useEffect(() => {
+    const myElement = document.querySelector('header');
+    const options = {
+      prefix: 'sticky',
+      tolerance: {
+        down : 10,
+        up : 10
+      },
+      offset : 5,
+      classes : {
+        initial : 'header',
+        pinned : 'header--pinned',
+        unpinned : 'header--unpinned',
+        top : 'header--top',
+        notTop : 'header--not-top',
+        bottom : 'header--bottom',
+        notBottom : 'header--not-bottom',
+      }
+    }
+    const headroom  = new Headroom(myElement, options);
+    headroom.init();
+  }, [])
+
   return (
     <>
-      <Layout className={styles['home']}>
+      <Layout>
         <section className={styles['carousel']}>
           <Carousel />
           <div className={styles['right-bar']}>
@@ -29,6 +63,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section className={styles['block']}>
           <div  className={styles['block__content']}>
             <h2>her zaman<br /><span>daha fazlası<br />mümkün!</span></h2>
@@ -183,6 +218,41 @@ export default function Home() {
                 </TabPanel>
               </Tabs>
             </div>
+          </div>
+
+          <div className={styles['sector__accordion']}>
+            <Accordion allowZeroExpanded>
+              <AccordionItem dangerouslySetExpanded={true}>
+                  <AccordionItemHeading>
+                      <AccordionItemButton>
+                          What harsh truths do you prefer to ignore?
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel>
+                      <p>
+                          Exercitation in fugiat est ut ad ea cupidatat ut in
+                          cupidatat occaecat ut occaecat consequat est minim minim
+                          esse tempor laborum consequat esse adipisicing eu
+                          reprehenderit enim.
+                      </p>
+                  </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem>
+                  <AccordionItemHeading>
+                      <AccordionItemButton>
+                          Is free will real or just an illusion?
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel>
+                      <p>
+                          In ad velit in ex nostrud dolore cupidatat consectetur
+                          ea in ut nostrud velit in irure cillum tempor laboris
+                          sed adipisicing eu esse duis nulla non.
+                      </p>
+                  </AccordionItemPanel>
+              </AccordionItem>
+          </Accordion>
           </div>
         </section>
 

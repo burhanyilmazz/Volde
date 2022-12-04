@@ -24,3 +24,4 @@ export * from './Sidebar';
 export * from './GalleryImage';
 export * from './ShareMedia';
 export * from './Search';
+export * from './Breadcrumb';

@@ -82,18 +82,26 @@ vertical-align: top;
   content: "\f109";
   }
 
-  %icon-youtube {
+  %icon-upload {
   content: "\f10a";
+  }
+
+  .icon-upload:before {
+  content: "\f10a";
+  }
+
+  %icon-youtube {
+  content: "\f10b";
   }
 
   .icon-youtube:before {
-  content: "\f10a";
+  content: "\f10b";
   }
 
   %icon-zoom {
-  content: "\f10b";
+  content: "\f10c";
   }
 
   .icon-zoom:before {
-  content: "\f10b";
+  content: "\f10c";
   }

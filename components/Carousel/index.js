@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import PropTypes from 'prop-types';
-import { A11y, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Pagination, Autoplay } from 'swiper';
 import Image from 'next/image'
 
+import "swiper/css";
 import 'swiper/css/pagination';
 
 import styles from './Carousel.module.scss';
@@ -15,9 +16,13 @@ export const Carousel = (props) => {
   return (
     <div className={styles['carousel']}>
       <Swiper
-        modules={[Pagination, A11y]}
+        modules={[Autoplay, Pagination, EffectFade]}
         slidesPerView={1}
-        autoplay
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        effect={"fade"}
         pagination={{ 
           clickable: true,
           renderBullet: (index, className) => {

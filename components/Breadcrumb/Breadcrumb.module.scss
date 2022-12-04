@@ -1,0 +1,23 @@
+.breadcrumb {
+  margin: 0;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+
+  li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &:last-child {
+      a {
+        color: #fff;
+      }
+    }
+  }
+}

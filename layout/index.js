@@ -1,8 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head'
-import { Header, Footer } from '../components';
+import { Header, Footer, Sidebar } from '../components';
 
-export const Layout = (props) => { 
+import { navlist } from '../utils/Nav';
+
+export const Layout = (props) => {
+  const {className} = props;
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  useEffect(() => {
+    document.querySelector('html').classList.remove('disable-scroll')
+  }, [])
+
+  const handleOnClickNav = (event) => {
+    event 
+      ? document.querySelector('html').classList.add('disable-scroll') 
+      : document.querySelector('html').classList.remove('disable-scroll')
+    setSidebarOpen(event)
+  }
+
   return (
     <>
       <Head>
@@ -11,7 +26,8 @@ export const Layout = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header className={className} onClickNav={(event) => handleOnClickNav(event)} />
+      <Sidebar nav={navlist} isShow={sidebarOpen} outsideClick={(event) => handleOnClickNav(event)} />
       <main>
         {props.children}
       </main>

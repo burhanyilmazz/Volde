@@ -5,11 +5,10 @@ import {Icon} from "../"
 import styles from './SocialMedia.module.scss';
 
 export const SocialMedia = (props) => { 
-  const { className, title } = props;
+  const { className } = props;
   
   return (
     <div className={classNames(styles['social-media'], className)}>
-      {title && <p>Follow Us</p> }
       <ul>
         <li><a href="#" target="_blank" aria-label='Volde Facebook' rel="noreferrer"><Icon icon="facebook" /></a></li>
         <li><a href="#" target="_blank" aria-label='Volde Linkedin' rel="noreferrer"><Icon icon="linkedin" /></a></li>
@@ -22,5 +21,4 @@ export const SocialMedia = (props) => {
 
 SocialMedia.propTypes = {
 	className: PropTypes.string,
-	title: PropTypes.bool,
 };

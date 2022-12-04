@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <Layout>
+      <Layout className={styles['home']}>
         <section className={styles['carousel']}>
           <Carousel />
           <div className={styles['right-bar']}>

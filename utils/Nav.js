@@ -96,6 +96,7 @@ export const navlist = [{
         ]
       },
       {
+        id: '3',
         title: 'Deterjan',
         children: [{
             id: '3',
@@ -124,6 +125,7 @@ export const navlist = [{
         ]
       },
       {
+        id: '3',
         title: 'Plastik',
         children: [{
             id: '3',
@@ -152,6 +154,7 @@ export const navlist = [{
         ]
       },
       {
+        id: '3',
         title: 'Kablo',
         children: [{
             id: '3',

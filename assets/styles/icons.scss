@@ -74,6 +74,7 @@ vertical-align: top;
   content: "\f108";
   }
 
+<<<<<<< HEAD
   %icon-youtube {
   content: "\f109";
   }
@@ -88,4 +89,20 @@ vertical-align: top;
 
   .icon-zoom:before {
   content: "\f10a";
+=======
+  %icon-search {
+  content: "\f107";
+  }
+
+  .icon-search:before {
+  content: "\f107";
+>>>>>>> c447349 (home)
+  }
+
+  %icon-youtube {
+  content: "\f108";
+  }
+
+  .icon-youtube:before {
+  content: "\f108";
   }

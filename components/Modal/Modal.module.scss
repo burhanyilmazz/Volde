@@ -10,6 +10,13 @@
   justify-content: center;
   z-index: 999999;
   flex-direction: column;
+
+
+  img {
+    width: 100% !important;
+    height: auto !important;
+    border-top-left-radius: 20px;
+  }
 }
 
 .container {
@@ -28,7 +35,7 @@
   align-items: center;
   background: #fff;
   top: -30px;
-  right: 52px;
+  right: -30px;
   width: 60px;
   height: 60px;
   border-radius: 100%;
@@ -36,7 +43,7 @@
 
   i {
     &:before {
-      font-size: 40px;
+      font-size: 20px;
     }
   }
 }

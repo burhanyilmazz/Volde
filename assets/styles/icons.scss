@@ -26,42 +26,66 @@ vertical-align: top;
   content: "\f102";
   }
 
-  %icon-email {
+  %icon-close {
   content: "\f103";
+  }
+
+  .icon-close:before {
+  content: "\f103";
+  }
+
+  %icon-email {
+  content: "\f104";
   }
 
   .icon-email:before {
-  content: "\f103";
+  content: "\f104";
   }
 
   %icon-facebook {
-  content: "\f104";
+  content: "\f105";
   }
 
   .icon-facebook:before {
-  content: "\f104";
+  content: "\f105";
   }
 
   %icon-instagram {
-  content: "\f105";
+  content: "\f106";
   }
 
   .icon-instagram:before {
-  content: "\f105";
+  content: "\f106";
   }
 
   %icon-linkedin {
-  content: "\f106";
+  content: "\f107";
   }
 
   .icon-linkedin:before {
-  content: "\f106";
+  content: "\f107";
+  }
+
+  %icon-twitter {
+  content: "\f108";
+  }
+
+  .icon-twitter:before {
+  content: "\f108";
   }
 
   %icon-youtube {
-  content: "\f107";
+  content: "\f109";
   }
 
   .icon-youtube:before {
-  content: "\f107";
+  content: "\f109";
+  }
+
+  %icon-zoom {
+  content: "\f10a";
+  }
+
+  .icon-zoom:before {
+  content: "\f10a";
   }

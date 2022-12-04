@@ -12,6 +12,7 @@ import 'react-tabs/style/react-tabs.css';
 import { Layout } from '../layout'
 import styles from '../assets/styles/Home.module.scss'
 import { Button, Button2, CardBlog, Card, Carousel } from '../components';
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -20,6 +21,13 @@ export default function Home() {
       <Layout>
         <section className={styles['carousel']}>
           <Carousel />
+          <div className={styles['right-bar']}>
+            <div className={styles['language']}><Link href="/en">EN</Link></div>
+            <div className={styles['scroll']}>
+              <span>Scroll</span>
+              <div />
+            </div>
+          </div>
         </section>
         <section className={styles['block']}>
           <div  className={styles['block__content']}>

@@ -18,6 +18,8 @@ export const Hamburger = (props) => {
       <span />
       <span />
       <span />
+
+      <div>Menu</div>
     </div>
   )
 }

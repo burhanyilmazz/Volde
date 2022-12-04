@@ -20,3 +20,4 @@ export * from './Library';
 export * from './CardBlog';
 export * from './Card';
 export * from './Information';
+export * from './Sidebar';

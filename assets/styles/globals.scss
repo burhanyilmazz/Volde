@@ -88,8 +88,8 @@ a {
 }
 .container-fluid {
   width: 100%;
-  padding-right: 140px;
-  padding-left: 140px;
+  padding-right: 170px;
+  padding-left: 170px;
   margin-right: auto;
   margin-left: auto;
 
@@ -152,6 +152,7 @@ ul {
     align-items: center;
     width: 100%;
     justify-content: center;
+    bottom: 0 !important;
 
     &-bullet {
       background: transparent !important;
@@ -160,7 +161,6 @@ ul {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      opacity: 1 !important;
       margin: 0 !important;
       border-radius: 0 !important;
 
@@ -238,7 +238,7 @@ ul {
   display: flex;
 
   &__content {
-    padding: 200px 140px 200px 170px;
+    padding: 200px 170px;
     width: 50%;
 
     h2 {

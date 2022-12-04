@@ -21,9 +21,6 @@ export * from './CardBlog';
 export * from './Card';
 export * from './Information';
 export * from './Sidebar';
-<<<<<<< HEAD
 export * from './GalleryImage';
 export * from './ShareMedia';
-=======
 export * from './Search';
->>>>>>> c447349 (home)

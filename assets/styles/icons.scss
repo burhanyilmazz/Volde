@@ -66,43 +66,34 @@ vertical-align: top;
   content: "\f107";
   }
 
-  %icon-twitter {
-  content: "\f108";
-  }
-
-  .icon-twitter:before {
-  content: "\f108";
-  }
-
-<<<<<<< HEAD
-  %icon-youtube {
-  content: "\f109";
-  }
-
-  .icon-youtube:before {
-  content: "\f109";
-  }
-
-  %icon-zoom {
-  content: "\f10a";
-  }
-
-  .icon-zoom:before {
-  content: "\f10a";
-=======
   %icon-search {
-  content: "\f107";
+  content: "\f108";
   }
 
   .icon-search:before {
-  content: "\f107";
->>>>>>> c447349 (home)
+  content: "\f108";
+  }
+
+  %icon-twitter {
+  content: "\f109";
+  }
+
+  .icon-twitter:before {
+  content: "\f109";
   }
 
   %icon-youtube {
-  content: "\f108";
+  content: "\f10a";
   }
 
   .icon-youtube:before {
-  content: "\f108";
+  content: "\f10a";
+  }
+
+  %icon-zoom {
+  content: "\f10b";
+  }
+
+  .icon-zoom:before {
+  content: "\f10b";
   }

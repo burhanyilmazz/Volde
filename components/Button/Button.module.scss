@@ -2,7 +2,7 @@
   font-size: 18px;
   font-weight: 300;
   line-height: 34px;
-  color: #231F20;
+  color: #231f20;
   z-index: 2;
   position: relative;
   transition: all 0.3s ease;
@@ -34,7 +34,7 @@
 
     span {
       display: flex;
-      background: #D60812;
+      background: #d60812;
       height: 48px;
       width: 55px;
       z-index: 1;
@@ -45,19 +45,20 @@
       transition: all 0.3s ease;
       border-top-left-radius: 20px;
     }
+    @media (hover: hover) {
+      &:hover {
+        span {
+          width: 100%;
+        }
 
-    &:hover {
-      span {
-        width: 100%;
-      }
+        .text {
+          color: #fff;
+          padding-left: 50px;
+        }
 
-      .text {
-        color: #fff;
-        padding-left: 50px;
-      }
-
-      .icon {
-        right: 85%;
+        .icon {
+          right: 85%;
+        }
       }
     }
   }

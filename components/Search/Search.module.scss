@@ -27,11 +27,12 @@
     input {
       padding: 48px 80px 48px 58px;
       background: #E7E7E834;
-      border: 1px solid #dcdddc;
+      border: 1px solid #DCDDDC;
       border-radius: 10px;
       height: 120px;
       color: #35373c;
       font-size: 26px;
+      line-height: 34px;
 
       @media screen and (max-width: 768px) {
         height: 100px;

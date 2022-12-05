@@ -1,0 +1,22 @@
+.search {
+  width: 110px;
+  height: 90px;
+  border-left: 1px solid rgba($color: #35373c, $alpha: 0.05);
+  position: fixed;
+  top: 0;
+  right: 110px;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  color: #A7A8A9;
+  display: none;
+  
+  @media screen and (max-width: 1024px) {
+    display: flex;
+  }
+  i {
+    &:before {
+      font-size: 30px;
+    }
+  }
+}

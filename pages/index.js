@@ -244,6 +244,7 @@ export default function Home() {
                     </div>
                   </AccordionItemPanel>
               </AccordionItem>
+
               <AccordionItem uuid="2" className={styles['accordion']}>
                   <AccordionItemHeading>
                       <AccordionItemButton>
@@ -268,6 +269,136 @@ export default function Home() {
                       <Card />
                     </div>
                   </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem uuid="3" className={styles['accordion']}>
+                  <AccordionItemHeading>
+                      <AccordionItemButton>
+                        <div className={styles['accordion__item']}>
+                          <div><Image src={'/images/icons/plastic.svg'} alt='Plastik' width={'26'} height={'70'} /></div>
+                          <span>Plastik</span>
+                        </div>
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel className={styles['accordion__panel']}>
+                    <div className={styles['card-list']}>
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                    </div>
+                  </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem uuid="4" className={styles['accordion']}>
+                  <AccordionItemHeading>
+                      <AccordionItemButton>
+                        <div className={styles['accordion__item']}>
+                          <div><Image src={'/images/icons/cable.svg'} alt='Kablo' width={'67'} height={'70'} /></div>
+                          <span>Kablo</span>
+                        </div>
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel className={styles['accordion__panel']}>
+                    <div className={styles['card-list']}>
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                    </div>
+                  </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem uuid="5" className={styles['accordion']}>
+                  <AccordionItemHeading>
+                      <AccordionItemButton>
+                        <div className={styles['accordion__item']}>
+                          <div><Image src={'/images/icons/coal.svg'} alt='Maden & Mineral' width={'52'} height={'70'} /></div>
+                          <span>Maden & Mineral</span>
+                        </div>
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel className={styles['accordion__panel']}>
+                    <div className={styles['card-list']}>
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                    </div>
+                  </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem uuid="6" className={styles['accordion']}>
+                  <AccordionItemHeading>
+                      <AccordionItemButton>
+                        <div className={styles['accordion__item']}>
+                          <div><Image src={'/images/icons/rubber.svg'} alt='Lastik & Kauçuk' width={'70'} height={'70'} /></div>
+                          <span>Lastik & Kauçuk</span>
+                        </div>
+                      </AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel className={styles['accordion__panel']}>
+                    <div className={styles['card-list']}>
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                      <Card />
+                    </div>
+                  </AccordionItemPanel>
+              </AccordionItem>
+
+              <AccordionItem uuid="7" className={styles['accordion']}>
+                <AccordionItemHeading>
+                  <AccordionItemButton>
+                    <div className={styles['accordion__item']}>
+                      <div><Image src={'/images/icons/food.svg'} alt='Gıda & Yem' width={'67'} height={'66'} /></div>
+                      <span>Gıda & Yem</span>
+                    </div>
+                  </AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel className={styles['accordion__panel']}>
+                  <div className={styles['card-list']}>
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                  </div>
+                </AccordionItemPanel>
               </AccordionItem>
           </Accordion>
           </div>

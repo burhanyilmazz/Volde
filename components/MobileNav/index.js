@@ -85,7 +85,7 @@ export const MobileNav = (props) => {
                     </li>
                   )
                 }
-                return <li key={index}><Link href={slug(`${childList.folder}`) + '//' + slug(`${item.title}-${item.id}`)}>{item.title}</Link></li>
+                return <li key={index}><Link href={`${childList.folder}/${slug(item.title)}-${item.id}`}>{item.title}</Link></li>
               })
             }
           </ul>
@@ -102,7 +102,7 @@ export const MobileNav = (props) => {
             {
               grandList?.children.map((item, index) => {
                 return (
-                  <li key={index}><Link href={slug(`${childList.folder}`) + '//' + slug(`${grandList.title}`) + '//' + slug(`${item.title}-${item.id}-${grandList.id}`)}>{item.title}</Link></li>
+                  <li key={index}><Link href={`${childList.folder}/${slug(grandList.title)}/${slug(item.title)}-${item.id}-${grandList.id}`}>{item.title}</Link></li>
                 )
               })
             }

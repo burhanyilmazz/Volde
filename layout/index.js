@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head'
-import { Header, Footer, Sidebar, MobileNav, Hamburger } from '../components';
+import { Header, Footer, Sidebar, MobileNav, Hamburger, SearchBar, Icon } from '../components';
+
+import styles from './Layout.module.scss';
 
 import { navlist } from '../utils/Nav';
 
 export const Layout = (props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
   useEffect(() => {
     document.querySelector('html').classList.remove('disable-scroll')
   }, [])
@@ -15,6 +19,14 @@ export const Layout = (props) => {
       ? document.querySelector('html').classList.add('disable-scroll') 
       : document.querySelector('html').classList.remove('disable-scroll')
     setSidebarOpen(event)
+  }
+
+  const handleOnClickSearch = (event) => {
+    event 
+      ? document.querySelector('html').classList.add('disable-scroll') 
+      : document.querySelector('html').classList.remove('disable-scroll')
+    setSidebarOpen(false)
+    setSearchOpen(event)
   }
 
   return (
@@ -29,6 +41,10 @@ export const Layout = (props) => {
       <Hamburger onClick={(event) => handleOnClickNav(event)}/>
       <Sidebar nav={navlist} isShow={sidebarOpen} outsideClick={(event) => handleOnClickNav(event)} />
       <MobileNav nav={navlist} isShow={sidebarOpen} />
+      <div className={styles['search']} onClick={(event) => handleOnClickSearch(event)}>
+        <Icon icon={'search'} />
+      </div>
+      <SearchBar isShow={searchOpen} outsideClick={(event) => handleOnClickSearch(event)} />
       <main>
         {props.children}
       </main>

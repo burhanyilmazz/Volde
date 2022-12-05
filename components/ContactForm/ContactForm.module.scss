@@ -27,11 +27,11 @@
     line-height: clamp(28px, 4vw, 39px);
   }
 
-  &__block{
+  &__block {
     display: flex;
     gap: 40px;
 
-    > div{
+    >div {
       width: 50%;
     }
   }
@@ -44,4 +44,22 @@
     margin-top: 50px;
   }
 
+}
+
+.communication__contact-form {
+  width: 50%;
+
+  .contact-form__block {
+    flex-direction: column;
+    gap: 0;
+
+    >div {
+      width: 100%;
+    }
+  }
+
+
+  .contact-form__text {
+    width: 100%;
+  }
 }

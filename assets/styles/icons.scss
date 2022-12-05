@@ -34,74 +34,98 @@ vertical-align: top;
   content: "\f103";
   }
 
-  %icon-email {
+  %icon-email-1 {
   content: "\f104";
+  }
+
+  .icon-email-1:before {
+  content: "\f104";
+  }
+
+  %icon-email {
+  content: "\f105";
   }
 
   .icon-email:before {
-  content: "\f104";
+  content: "\f105";
   }
 
   %icon-facebook {
-  content: "\f105";
+  content: "\f106";
   }
 
   .icon-facebook:before {
-  content: "\f105";
+  content: "\f106";
   }
 
   %icon-instagram {
-  content: "\f106";
+  content: "\f107";
   }
 
   .icon-instagram:before {
-  content: "\f106";
+  content: "\f107";
   }
 
   %icon-linkedin {
-  content: "\f107";
+  content: "\f108";
   }
 
   .icon-linkedin:before {
-  content: "\f107";
+  content: "\f108";
+  }
+
+  %icon-location {
+  content: "\f109";
+  }
+
+  .icon-location:before {
+  content: "\f109";
+  }
+
+  %icon-phone {
+  content: "\f10a";
+  }
+
+  .icon-phone:before {
+  content: "\f10a";
   }
 
   %icon-search {
-  content: "\f108";
+  content: "\f10b";
   }
 
   .icon-search:before {
-  content: "\f108";
+  content: "\f10b";
   }
 
   %icon-twitter {
-  content: "\f109";
+  content: "\f10c";
   }
 
   .icon-twitter:before {
-  content: "\f109";
+  content: "\f10c";
   }
 
   %icon-upload {
-  content: "\f10a";
+  content: "\f10d";
   }
 
   .icon-upload:before {
-  content: "\f10a";
+  content: "\f10d";
   }
 
   %icon-youtube {
-  content: "\f10b";
+  content: "\f10e";
   }
 
   .icon-youtube:before {
-  content: "\f10b";
+  content: "\f10e";
   }
 
   %icon-zoom {
-  content: "\f10c";
+  content: "\f10f";
   }
 
   .icon-zoom:before {
-  content: "\f10c";
+  content: "\f10f";
   }

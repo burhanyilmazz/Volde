@@ -9,18 +9,20 @@ import { FormInput, FormTextarea, Button, FormCheckbox } from "../"
 import styles from './ContactForm.module.scss';
 
 export const ContactForm = (props) => {
-  const { className } = props;
+  const { className, communication, title, field } = props;
 
   const contactSchema = Yup.object().shape({
     email: Yup.string()
       .email('Wrong format.')
       .required('This field cannot be left blank.'),
-    namesurname: Yup.string().required('This field cannot be left blank.'),
+    name: Yup.string().required('This field cannot be left blank.'),
+    surname: Yup.string().required('This field cannot be left blank.'),
     recaptcha: Yup.string().required('This field cannot be left blank.'),
   })
 
   const [contact] = useState({
-    namesurname: '',
+    name: '',
+    surname: '',
     email: '',
     phone: '',
     message: '',
@@ -56,8 +58,8 @@ export const ContactForm = (props) => {
       <Head>
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
       </Head>
-      <div className={classNames(styles['contact-form'], className)}>
-        <h3>Bizimle iletişime geçin</h3>
+      <div className={classNames(styles['contact-form'], { [styles["communication__contact-form"]]: communication }, className)}>
+        {title && <h3>{field}</h3>}
         <div className={styles["contact-form__text"]}>
           Lorem Ipsum is simply dummy typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.
         </div>
@@ -68,9 +70,9 @@ export const ContactForm = (props) => {
                 <FormInput
                   field='Adınız'
                   required
-                  errorMessage={formik.errors.namesurname}
-                  {...formik.getFieldProps('namesurname')}
-                  className={classNames({ 'is-invalid': formik.touched.namesurname && formik.errors.namesurname })}
+                  errorMessage={formik.errors.name}
+                  {...formik.getFieldProps('name')}
+                  className={classNames({ 'is-invalid': formik.touched.name && formik.errors.name })}
                 />
               </div>
 
@@ -78,9 +80,9 @@ export const ContactForm = (props) => {
                 <FormInput
                   field='Soyadınız'
                   required
-                  errorMessage={formik.errors.namesurname}
-                  {...formik.getFieldProps('namesurname')}
-                  className={classNames({ 'is-invalid': formik.touched.namesurname && formik.errors.namesurname })}
+                  errorMessage={formik.errors.surname}
+                  {...formik.getFieldProps('surname')}
+                  className={classNames({ 'is-invalid': formik.touched.surname && formik.errors.surname })}
                 />
               </div>
             </div>
@@ -110,7 +112,7 @@ export const ContactForm = (props) => {
             </div>
           </div>
 
-          <div className='form-group'>
+          {!communication && <div className='form-group'>
             <FormInput
               field='Lütfen CV’nizi yükleyiniz. ( Pdf, Docx, Jpeg )'
               type="email"
@@ -119,7 +121,7 @@ export const ContactForm = (props) => {
               {...formik.getFieldProps('email')}
               className={classNames({ 'is-invalid': formik.touched.email && formik.errors.email })}
             />
-          </div>
+          </div>}
 
           <div className='form-group'>
             <FormTextarea

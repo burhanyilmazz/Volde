@@ -44,7 +44,7 @@ export default function Career() {
             </div>
           </div>
         </section>
-        <ContactForm />
+        <ContactForm title field="Bizimle iletişime geçin" />
       </Layout>
     </>
   );

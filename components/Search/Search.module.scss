@@ -59,12 +59,22 @@
           height: 100px;
           color: #a7a8a9;
           font-size: 20px;
+          
+          @media screen and (max-width: 1280px) {
+            padding-left: 20px;
+            padding-right: 45px;
+            font-size: 18px;
+          }
 
           &[data-dirty="true"],
           &[data-dirty-important="true"],
           &:focus {
             & ~ label {
               transform: translate(30px, 15px) scale(0.75);
+
+              @media screen and (max-width: 1280px) {
+                transform: translate(20px, 15px) scale(0.75);
+              }
             }
           }
         }
@@ -74,16 +84,29 @@
           color: #a7a8a9;
           font-size: 20px;
 
+          @media screen and (max-width: 1280px) {
+            transform: translate(20px, 32px) scale(1);
+            font-size: 18px;
+          }
+
           span {
             display: none;
           }
         }
+
+        
       }
     }
 
     .input {
       i {
         color: #a7a8a9;
+      }
+
+      @media screen and (max-width: 1280px) {
+        &-submit {
+          right: 15px;
+        }
       }
     }
   }

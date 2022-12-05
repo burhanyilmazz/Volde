@@ -1,7 +1,8 @@
 .social-media {
   ul {
     display: flex;
-    gap: 58px;
+    gap: clamp(30px, 4vw, 60px);
+
     a {
       color: #a7a8a9;
       transition: all 0.5s ease;

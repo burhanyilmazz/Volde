@@ -25,3 +25,4 @@ export * from './GalleryImage';
 export * from './ShareMedia';
 export * from './Search';
 export * from './Breadcrumb';
+export * from './MobileNav';

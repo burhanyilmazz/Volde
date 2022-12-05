@@ -154,6 +154,10 @@ ul {
     justify-content: center;
     bottom: 0 !important;
 
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+
     &-bullet {
       background: transparent !important;
       width: 195px !important;
@@ -345,14 +349,16 @@ ul {
     display: none;
   }
 }
-
-.header {
-  &--top {
-    padding: 20px 25px !important;
-
-    img {
-      width: 189px;
-      height: 54px;
+@media screen and (min-width: 1024px) {
+  .header {
+    &--top {
+      padding: 10px 25px !important;
+  
+      img {
+        width: 189px;
+        height: 54px;
+      }
     }
   }
 }
+

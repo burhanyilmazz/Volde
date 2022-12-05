@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head'
-import { Header, Footer, Sidebar } from '../components';
+import { Header, Footer, Sidebar, MobileNav, Hamburger } from '../components';
 
 import { navlist } from '../utils/Nav';
 
@@ -25,8 +25,10 @@ export const Layout = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header onClickNav={(event) => handleOnClickNav(event)} />
+      <Header />
+      <Hamburger onClick={(event) => handleOnClickNav(event)}/>
       <Sidebar nav={navlist} isShow={sidebarOpen} outsideClick={(event) => handleOnClickNav(event)} />
+      <MobileNav nav={navlist} isShow={sidebarOpen} />
       <main>
         {props.children}
       </main>

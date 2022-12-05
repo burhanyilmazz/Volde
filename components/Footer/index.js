@@ -28,7 +28,7 @@ export const Footer = () => {
                       {
                         item.children.map((child, i) => {
                           return (
-                            <li key={i}><Link href={slug(`${item.folder}/${child.title}-${child.id}`)}>{child.title}</Link></li>
+                            <li key={i}><Link href={slug(`${item.folder}`) + '//' + slug(`${child.title}-${child.id}`)}>{child.title}</Link></li>
                           )
                         })
                       }

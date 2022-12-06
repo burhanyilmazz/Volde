@@ -15,7 +15,7 @@ export const CardBlog = (props) => {
           <Image src={'/images/img/blog.jpeg'} width={'501'} height={'247'} alt={'Volde Dijital Kütüphane'} />
         </picture>
         <figcaption>
-          <h6>10 Ağustos 2022</h6>
+          <span>10 Ağustos 2022</span>
           <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
           <div className={styles['arrow']} />
         </figcaption>

@@ -25,7 +25,7 @@ export const FormInput = (props) => {
           required={required}
           {...rest}
         />
-        {field && <label htmlFor={rest.name}>{field} {required && <span>*</span>}</label> }
+        {field && <label htmlFor={id || rest.name}>{field} {required && <span>*</span>}</label> }
         {required && <pre>{errorMessage}</pre>}
       </div>
     </>

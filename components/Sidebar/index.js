@@ -54,7 +54,7 @@ export const Sidebar = (props) => {
   return (
     <aside className={classNames(styles['sidebar'], {[styles['sidebar--open']] : isShow })} onClick={(event) => handleOutsideClick(event)}>
       <div className={classNames(styles['search'], {[styles['search--focus']]: search})}>
-        <Search sidebar onFocus={() => setSearch(true)} onBlur={() => setSearch(false)} />
+        <Search sidebar onFocus={() => setSearch(true)} onBlur={() => setSearch(false)} id={'sidebar'} />
       </div>
       <div className={classNames(styles['page'], styles['page-1'])}>
         <nav>

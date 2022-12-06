@@ -9,7 +9,7 @@ import styles from './Search.module.scss';
 import { FormInput, Icon } from '../';
 
 export const Search = (props) => {
-  const {onFocus, onBlur, sidebar} = props;
+  const {onFocus, onBlur, sidebar, id} = props;
   const router = useRouter()
 
   const searchSchema = Yup.object().shape({
@@ -45,6 +45,7 @@ export const Search = (props) => {
             name={'keyword'} 
             type="text" 
             required={true}
+            id={id}
             errorMessage={formik.errors.keyword}
             className={classNames(styles['search-input'], {'is-invalid': formik.touched.keyword && formik.errors.keyword})}
             onFocus={handleFocus}

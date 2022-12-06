@@ -20,7 +20,7 @@ export const SearchBar = (props) => {
     <aside className={classNames(styles['search'], {[styles['search--open']] : isShow })} onClick={(event) => handleOutsideClick(event)}>
       <div className={styles['wrap']}>
         <div className='container-fluid'>
-          <Search />
+          <Search id={'layout'} />
         </div>
       </div>
     </aside>

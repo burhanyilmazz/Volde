@@ -34,7 +34,7 @@ export const Layout = (props) => {
       <Head>
         <title>Volde</title>
         <meta name="description" content="Volde" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo/logo.svg" />
       </Head>
 
       <Header />

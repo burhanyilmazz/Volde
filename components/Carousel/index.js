@@ -28,7 +28,7 @@ export const Carousel = (props) => {
           renderBullet: (index, className) => {
             const slides = document.querySelectorAll('.carousel .swiper-slide');
 
-            return '<span class="' + className + '"><img src=' + slides[index].dataset.thumb + '></span>';
+            return '<span class="' + className + '"><img src=' + slides[index].dataset.thumb + ' alt="slide-thumb"></span>';
           },
         }}
         className={classNames('carousel', className)}

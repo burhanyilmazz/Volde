@@ -14,7 +14,7 @@ export const Button = (props) => {
     <div className={classNames(styles['button'], className, {[styles['button--download']]: download})}>
       {locale && <Link href={href}><div className={styles['text']}>{text}</div> <div className={styles['icon']}><Icon icon={'arrow'} /></div> <span /></Link> }
       {!locale && !button && <a href={href} target={target} onClick={handleClick}><div className={styles['text']}>{text}</div> <div className={styles['icon']}><Icon icon={'arrow'} /></div> <span /></a> }
-      {button && !locale && <button onClick={handleClick} aria-label={icon ? 'icon buton' : text}><div className={styles['text']}>{text}</div> <div className={styles['icon']}><Icon icon={'arrow'} /></div> <span /></button> }
+      {button && !locale && <button onClick={handleClick}><div className={styles['text']}>{text}</div> <div className={styles['icon']}><Icon icon={'arrow'} /></div> <span /></button> }
     </div>
   )
 }

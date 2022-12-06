@@ -36,21 +36,21 @@ export const Carousel = (props) => {
         <SwiperSlide className={styles['carousel__slide']} data-thumb='/images/carousel/slide-1/thumb.png'>
           <div className={styles['slide-content']}>
             <div className={styles['slide-content__title']}>more is possible</div>
-            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-1/text.png'} width={995} height={345} alt={'hassas dozajlama'} /></div>
+            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-1/text.svg'} width={995} height={345} alt={'hassas dozajlama'} /></div>
             <div className={styles['slide-content__hand']}><Image src={'/images/carousel/slide-1/hand.png'} width={1920} height={751} alt={'hassas dozajlama'} /></div>
           </div>
         </SwiperSlide>
         <SwiperSlide className={styles['carousel__slide']} data-thumb='/images/carousel/slide-2/thumb.png'>
           <div className={styles['slide-content']}>
             <div className={styles['slide-content__title']}>more is possible</div>
-            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-2/text.png'} width={707} height={358} alt={'güvenli taşıma'} /></div>
+            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-2/text.svg'} width={707} height={358} alt={'güvenli taşıma'} /></div>
             <div className={styles['slide-content__hand']}><Image src={'/images/carousel/slide-2/hand.png'} width={1920} height={771} alt={'güvenli taşıma'} /></div>
           </div>
         </SwiperSlide>
         <SwiperSlide className={styles['carousel__slide']} data-thumb='/images/carousel/slide-3/thumb.png'>
           <div className={styles['slide-content']}>
             <div className={styles['slide-content__title']}>more is possible</div>
-            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-3/text.png'} width={889} height={317} alt={'pratik stoklama'} /></div>
+            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-3/text.svg'} width={889} height={317} alt={'pratik stoklama'} /></div>
             <div className={styles['slide-content__hand']}><Image src={'/images/carousel/slide-3/hand.png'} width={1920} height={811} alt={'pratik stoklama'} /></div>
           </div>
         </SwiperSlide>

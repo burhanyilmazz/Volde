@@ -1,18 +1,33 @@
 .footer {
   position: relative;
   background: url('/images/line.svg') 10px bottom no-repeat #f2f2f2;
+  @media screen and (max-width: 1280px) {
+    background-position: 0px bottom;
+  }
+
+  @media screen and (max-width: 768px) {
+    background-size: 1000px;
+  }
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 134px;
-  padding-bottom: 73px;
+  padding-top: clamp(40px, 8vw, 134px);
+  padding-bottom: clamp(30px, 4vw, 73px);
+
+  @media screen and (max-width: 1024px) {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
 }
 
 .nav {
   display: flex;
   width: calc(100% - 16px);
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 
   h6 {
     font-size: 14px;
@@ -32,8 +47,14 @@
 
   > div {
     width: 20%;
+    @media screen and (max-width: 1280px) {
+      width: 22.5%;
+    }
 
     &:last-child {
+      @media screen and (max-width: 1280px) {
+        width: 10%;
+      }
       ul {
         font-weight: 500;
       }
@@ -43,15 +64,34 @@
 
 .social-media {
   margin-top: 6px;
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    order: 2;
+    width: 100%;
+  }
   ul {
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 1024px) {
+      flex-direction: row;
+
+      i {
+        &:before {
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
 
 .logo {
-  margin-top: 200px;
+  margin-top: clamp(40px, 12.5vw, 200px);
   width: calc(20% - 8px);
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .copyright {
@@ -59,19 +99,42 @@
   font-size: 12px;
   font-weight: 300;
   line-height: 16px;
-  margin-top: 220px;
+  margin-top: clamp(60px, 14vw, 220px);
   width: 40%;
+
+  @media screen and (max-width: 1440px) {
+    width: 30%;
+  }
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    order: 3;
+    margin-top: 80px;
+    width: 100%;
+  }
 }
 
 .policy {
-  margin-top: 220px;
+  margin-top: clamp(60px, 14vw, 220px);
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    order: 1;
+    margin-top: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
   ul {
     display: flex;
     align-items: center;
     font-size: 12px;
     font-weight: 300;
     line-height: 16px;
-    gap: 53px
+    gap: 53px;
+    
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
   }
 
   a {
@@ -82,7 +145,19 @@
 .fikirmod {
   position: absolute;
   right: 170px;
-  bottom: 73px;
+  bottom: clamp(30px, 4vw, 73px);
+
+  @media screen and (max-width: 1366px) {
+    right: 100px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    right: 36px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    bottom: 30px;
+  }
 }
 
 .foot {

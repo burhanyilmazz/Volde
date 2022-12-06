@@ -40,11 +40,15 @@
   border-radius: 20px;
   overflow: hidden;
 
+  @media screen and (max-width: 768px) {
+    height: 220px;
+  }
+
   h3 {
     color: #fff;
     font-weight: 400;
-    font-size: 19px;
-    line-height: 23px;
+    font-size: clamp(14px, 1.4vw, 19px);
+    line-height: clamp(18px, 1.5vw, 23px);
     width: 70%;
     margin-top: 0;
     display: -webkit-box;
@@ -52,6 +56,11 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      -webkit-line-clamp: 3;
+    }
   }
 
   figure {
@@ -84,6 +93,11 @@
     backdrop-filter: blur(30px);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    @media screen and (max-width: 768px) {
+      height: 87px;
+      padding: 13px;
+    }
   }
 
   &:hover {

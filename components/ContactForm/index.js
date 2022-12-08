@@ -10,6 +10,7 @@ import styles from './ContactForm.module.scss';
 
 export const ContactForm = (props) => {
   const { className, communication, title, field } = props;
+  const [checkboxAllow, setCheckboxAllow] = useState(true);
 
   const contactSchema = Yup.object().shape({
     email: Yup.string()
@@ -17,6 +18,7 @@ export const ContactForm = (props) => {
       .required('This field cannot be left blank.'),
     name: Yup.string().required('This field cannot be left blank.'),
     surname: Yup.string().required('This field cannot be left blank.'),
+    permission: Yup.bool().oneOf([true], 'This field cannot be left blank.'),
     recaptcha: Yup.string().required('This field cannot be left blank.'),
   })
 
@@ -26,6 +28,7 @@ export const ContactForm = (props) => {
     email: '',
     phone: '',
     message: '',
+    permission: true,
     recaptcha: ''
   })
 
@@ -52,6 +55,11 @@ export const ContactForm = (props) => {
       }
     };
   }, [])
+
+  const handleChangePermission = () => {
+    setCheckboxAllow(!checkboxAllow)
+    formik.setFieldValue('permission', !checkboxAllow)
+  };
 
   return (
     <>
@@ -131,7 +139,15 @@ export const ContactForm = (props) => {
               {...formik.getFieldProps('message')}
             />
           </div>
-          <FormCheckbox label='VOLDE tarafından yukarıda belirtmiş olduğum bilgiler üzerinden benimle iletişim kurulmasını ve izinli iletişim formu ‘nu onaylıyorum.' />
+          <FormCheckbox
+            label='VOLDE tarafından yukarıda belirtmiş olduğum bilgiler üzerinden benimle iletişim kurulmasını ve izinli iletişim formu ‘nu onaylıyorum.'
+            onChange={() => handleChangePermission()}
+            checked={checkboxAllow}
+            errorMessage={formik.errors.permission}
+            name={'permission'}
+            required
+            className={classNames({'is-invalid': formik.touched.permission && formik.errors.permission})}
+          />
           <div className={styles["form-group-buttons"]}>
             <div className={classNames('captcha', { 'is-invalid': formik.touched.recaptcha && formik.errors.recaptcha })}>
               <div id="captcha"></div>

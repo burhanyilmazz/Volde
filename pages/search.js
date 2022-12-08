@@ -2,28 +2,9 @@ import Link from 'next/link'
 
 import { Layout } from "../layout";
 import styles from "../assets/styles/Search.module.scss";
-import { Search, Icon, Breadcrumb } from "../components";
+import { Search, Icon } from "../components";
 
 export default function SearchPage() {
-
-  const breadcrumbList = [
-    {
-      title: 'Anasayfa',
-      href: '/'
-    },
-    {
-      title: 'Sektörler',
-      href: '/'
-    },
-    {
-      title: 'Kimya',
-      href: '/'
-    },
-    {
-      title: "Karıştırıcı ve Reaktör",
-      href: '/'
-    }
-  ]
 
   return (
     <>
@@ -36,7 +17,7 @@ export default function SearchPage() {
           <h3>Toplam 28 adet sonuç bulunmuştur.</h3>
           <div className={styles["item"]}>
             <div className={styles["content"]}>
-              <Breadcrumb data={breadcrumbList} />
+              <h3>Karıştırıcı ve Reaktör</h3>
               <div className={styles["text"]}>
                 <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim.</p>
               </div>
@@ -46,7 +27,7 @@ export default function SearchPage() {
 
           <div className={styles["item"]}>
             <div className={styles["content"]}>
-              <Breadcrumb data={breadcrumbList} />
+              <h3>Karıştırıcı ve Reaktör</h3>
               <div className={styles["text"]}>
                 <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim.</p>
               </div>
@@ -56,7 +37,7 @@ export default function SearchPage() {
 
           <div className={styles["item"]}>
             <div className={styles["content"]}>
-              <Breadcrumb data={breadcrumbList} />
+              <h3>Karıştırıcı ve Reaktör</h3>
               <div className={styles["text"]}>
                 <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim.</p>
               </div>
@@ -66,7 +47,7 @@ export default function SearchPage() {
 
           <div className={styles["item"]}>
             <div className={styles["content"]}>
-              <Breadcrumb data={breadcrumbList} />
+              <h3>Karıştırıcı ve Reaktör</h3>
               <div className={styles["text"]}>
                 <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim.</p>
               </div>
@@ -76,7 +57,7 @@ export default function SearchPage() {
 
           <div className={styles["item"]}>
             <div className={styles["content"]}>
-              <Breadcrumb data={breadcrumbList} />
+              <h3>Karıştırıcı ve Reaktör</h3>
               <div className={styles["text"]}>
                 <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim.</p>
               </div>

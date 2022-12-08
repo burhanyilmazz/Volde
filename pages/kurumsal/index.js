@@ -65,6 +65,20 @@ export default function About() {
                 daha verimli, daha yenilikçi ve daha hassas teknolojilerle
                 müşterilerimiz için her zaman daha fazlasını hedefliyoruz.
               </p>
+
+              <ul>
+                <li>Gizlilik (Bilginin sadece yetkili kişiler tarafından erişilebilir olması)</li>
+                <li>Bütünlük (Bilginin tam ve doğru olması, yetkisiz değiştirmelerden korunması ve değiştirildiğinde farkına varılması)</li>
+                <li>Erişilebilirlik (Bilginin yetkili kullanıcılar tarafından gerek duyulduğu an kullanılabilir olması)</li>
+              </ul>
+
+              <h3>Bilgi Güvenliği Yönetim Sistemi (BGYS);</h3>
+
+              <ul>
+                <li>Gizlilik (Bilginin sadece yetkili kişiler tarafından erişilebilir olması)</li>
+                <li>Bütünlük (Bilginin tam ve doğru olması, yetkisiz değiştirmelerden korunması ve değiştirildiğinde farkına varılması)</li>
+                <li>Erişilebilirlik (Bilginin yetkili kullanıcılar tarafından gerek duyulduğu an kullanılabilir olması)</li>
+              </ul>
             </div>
           </div>
           <div className={"block__image"}>

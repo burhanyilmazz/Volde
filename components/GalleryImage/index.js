@@ -11,11 +11,7 @@ export const GalleryImage = (props) => {
 
   return (
     <div className={styles["gallery"]} onClick={handleClick}>
-      <figure>
-        <picture>
-          <Image src={image} width={'271'} height={'184'} alt={'Volde Galeri'} />
-        </picture>
-      </figure>
+      <Image src={image} width={'271'} height={'184'} alt={'Volde Galeri'} />
       <div className={styles["gallery__layer"]}>
         <Icon icon='zoom'/>
       </div>

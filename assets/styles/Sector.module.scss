@@ -5,6 +5,18 @@
   align-items: center;
   padding: 124px 170px 85px;
 
+  @media screen and (max-width: 1366px) {
+    padding: 124px 100px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 124px 36px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 36px;
+  }
+
   h2 {
     width: 100%;
     text-align: left;
@@ -15,6 +27,10 @@
     height: 100%;
     border-radius: 10px;
     margin-bottom: 80px;
+
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 30px;
+    }
 
     img {
       width: 100%;
@@ -28,9 +44,28 @@
     justify-content: space-between;
     margin-top: 86px;
 
-    .product__image {
-      display: flex;
-      gap: 40px;
+    @media screen and (max-width: 1024px) {
+      margin-top: 30px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    gap: 40px;
+
+    @media screen and (max-width: 1024px) {
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    img {
+      width: calc(50% - 20px);
+      height: auto;
+      object-fit: cover;
+
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+      }
     }
   }
 }

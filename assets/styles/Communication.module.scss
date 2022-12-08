@@ -1,14 +1,38 @@
 .communication {
   display: flex;
 
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
+
   &__content {
     background: url("/images/line-2.svg") right bottom #e8e8e8 no-repeat;
     padding: 200px 170px;
     width: 50%;
+    background-size: clamp(400px, 35vw, 600px);
+    order: 1;
+
+    @media screen and (max-width: 1366px) {
+      padding-right: 100px;
+      padding-left: 100px;
+    }
+
+    @media screen and (max-width: 1280px) {
+      padding-right: 36px;
+      padding-left: 36px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      background-image: none;
+      padding-top: 70px;
+      padding-bottom: 70px;
+      order: 2;
+    }
 
     h2 {
-      font-size: 56px;
-      line-height: 67px;
+      font-size: clamp(36px, 3.5vw, 56px);
+      line-height: clamp(46px, 4vw, 67px);
       font-weight: 300;
 
       span {
@@ -79,6 +103,11 @@
 
   &__image {
     width: 50%;
+    order: 2;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      order: 1;
+    }
 
     img {
       width: 100%;

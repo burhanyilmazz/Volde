@@ -14,6 +14,10 @@
   @media screen and (max-width: 1024px) {
     display: flex;
   }
+
+  @media screen and (max-width: 320px) {
+    width: 60px;
+  }
   i {
     &:before {
       font-size: 30px;

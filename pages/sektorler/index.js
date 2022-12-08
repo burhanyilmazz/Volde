@@ -60,6 +60,7 @@ export default function Sector() {
             />
           </div>
         </section>
+        
         <section className={styles["product"]}>
           <div className={styles["product__img"]}>
             <Image
@@ -102,8 +103,9 @@ export default function Sector() {
               />
             </div>
           </div>
+
+          <Information />
         </section>
-        <Information />
       </Layout>
     </>
   );

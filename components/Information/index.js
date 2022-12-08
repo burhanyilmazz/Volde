@@ -1,16 +1,13 @@
-import classNames from "classnames";
 import PropTypes from "prop-types";
-import Image from "next/image";
 
 import { Button } from "..";
 import styles from "./Information.module.scss";
 
-export const Information = (props) => {
-  const { className } = props;
+export const Information = () => {
 
   return (
     <div className={styles["information"]}>
-      <div>
+      <div className={styles['title']}>
         <span>Daha fazla bilgi</span> için lütfen bizimle iletişime geçin.
       </div>
       <Button
@@ -21,8 +18,4 @@ export const Information = (props) => {
       />
     </div>
   );
-};
-
-Information.propTypes = {
-  className: PropTypes.string,
 };

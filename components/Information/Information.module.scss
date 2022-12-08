@@ -2,14 +2,26 @@
   display: flex;
   justify-content: space-between;
   background: #e8e8e8;
-  margin: 90px 170px;
+  width: 100%;
   padding: 77px 87px;
   border-radius: 10px;
   font-weight: 300;
-  font-size: 24px;
+  font-size: clamp(16px, 1.6vw, 24px);
   line-height: 40px;
+  margin-top: 90px;
 
-  span{
+  @media screen and (max-width: 1024px) {
+    margin-top: 50px;
+    flex-wrap: wrap;
+    padding: 36px;
+
+    .title {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  span {
     font-weight: 400;
   }
 }

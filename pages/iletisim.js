@@ -4,11 +4,11 @@ import classNames from "classnames";
 
 import { Loader } from '@googlemaps/js-api-loader';
 
-import { Layout } from "../../layout";
-import styles from "../../assets/styles/Communication.module.scss";
-import { ContactForm, Icon } from "../../components";
+import { Layout } from "../layout";
+import styles from "../assets/styles/Communication.module.scss";
+import { ContactForm, Icon } from "../components";
 
-import { mapOptions } from '../../utils/Map';
+import { mapOptions } from '../utils/Map';
 
 
 export default function Communication() {

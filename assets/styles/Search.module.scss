@@ -1,12 +1,11 @@
 .search {
   padding: 224px 170px 155px;
 
-
   h3 {
     font-size: 20px;
     line-height: 40px;
     font-weight: 400;
-    color: #35373C;
+    color: #35373c;
     margin-top: 43px;
   }
 
@@ -16,7 +15,7 @@
       font-weight: 600;
       line-height: 78px;
       margin-bottom: 46px;
-      color: #35373C;
+      color: #35373c;
     }
   }
 
@@ -24,8 +23,8 @@
     display: flex;
     align-items: center;
     padding: 60px 0;
-    border-top: 1px solid #DCDDDC;
-    border-bottom: 1px solid #DCDDDC;
+    border-top: 1px solid #dcdddc;
+    border-bottom: 1px solid #dcdddc;
     margin-top: -1px;
   }
 
@@ -33,7 +32,7 @@
     position: relative;
     width: 90%;
 
-    &+a {
+    & + a {
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -49,7 +48,6 @@
   }
 
   .text {
-
     p {
       font-size: 18px;
       line-height: 30px;
@@ -63,15 +61,11 @@
     position: relative;
 
     &-text {
-
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
 
-
-
-
-      >div {
+      > div {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -86,10 +80,6 @@
           font-weight: 300 !important;
         }
       }
-
-
-
-
     }
   }
 }

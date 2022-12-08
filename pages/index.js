@@ -75,7 +75,7 @@ export default function Home() {
         <section className={styles['sector']}>
           <div className='container-fluid'>
             <h2><span>7</span> farklı sektörde <span>100</span>`den fazla çözüm sunuyoruz.</h2>
-            <h3><Image src={'/images/icons/filter.svg'} alt='Sektörle / Çözümler' width={'65'} height={'65'} /> Sektörle / Çözümler</h3>
+            <h3><Image src={'/images/icons/filter.svg'} alt='Sektörle / Çözümler' width={'65'} height={'65'} /> Sektörler / Çözümler</h3>
 
             <div className={styles['sector__tabs']}>
               <Tabs className={styles['tabs']} selectedTabClassName={styles['tab--selected']}>

@@ -1,14 +1,39 @@
 import Image from "next/image";
-import classNames from "classnames";
 
 import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
-import { CardBlog, Button, Information } from "../../components";
+import { Information } from "../../components";
+import { LeftNav, Breadcrumb } from "../../components/";
+
+import { navlist } from '../../utils/Nav';
 
 export default function Sector() {
+  const navDataParent = navlist.find(item => item.type === 'sectors')
+  const navDataChild = navDataParent.children[0];
+  const breadcrumbList = [
+    {
+      title: 'Anasayfa',
+      href: '/'
+    },
+    {
+      title: 'Sektörler',
+      href: '/'
+    },
+    {
+      title: 'Kimya',
+      href: '/'
+    },
+    {
+      title: "Karıştırıcı ve Reaktör",
+      href: '/'
+    }
+  ]
+
   return (
     <>
       <Layout>
+        <LeftNav data={navDataChild} />
+        <Breadcrumb data={breadcrumbList} />
         <section className={"block"}>
           <div className={"block__content"}>
             <h2>Karıştırıcı ve Reaktör</h2>

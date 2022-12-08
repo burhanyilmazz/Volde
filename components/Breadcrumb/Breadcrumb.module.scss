@@ -3,6 +3,14 @@
   font-weight: 300;
   font-size: 10px;
   line-height: 16px;
+  position: absolute;
+  left: 170px;
+  border-left: 1px solid rgba($color: #8C8F95, $alpha: .4);
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 30px;
+  top: 25px;
 
   li {
     position: relative;
@@ -20,7 +28,7 @@
         content: "";
         width: 5px;
         height: 5px;
-        background: #8C8F95;
+        background: rgba($color: #8C8F95, $alpha: .4);
         border-radius: 100%;
         right: -15px;
         top: 7\3px;

@@ -1,6 +1,7 @@
 .footer {
   position: relative;
   background: url('/images/line.svg') 10px bottom no-repeat #f2f2f2;
+  z-index: 9;
   @media screen and (max-width: 1280px) {
     background-position: 0px bottom;
   }
@@ -164,6 +165,8 @@
   display: flex;
   background: #f2f2f2;
   gap: 5px;
+  position: relative;
+  z-index: 9;
 
   @media screen and (max-width: 1024px) {
     flex-wrap: wrap;

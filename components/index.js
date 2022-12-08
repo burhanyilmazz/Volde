@@ -27,3 +27,4 @@ export * from './Search';
 export * from './SearchBar';
 export * from './Breadcrumb';
 export * from './MobileNav';
+export * from './LeftNav';

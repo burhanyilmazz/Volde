@@ -1,9 +1,9 @@
 import Image from "next/image";
 import classNames from "classnames";
 
-import { Layout } from "../../layout";
-import styles from "../../assets/styles/Career.module.scss";
-import { ContactForm } from "../../components";
+import { Layout } from "../layout";
+import styles from "../assets/styles/Career.module.scss";
+import { ContactForm } from "../components";
 
 export default function Career() {
   return (

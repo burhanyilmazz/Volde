@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Link from 'next/link'
 
-import {Icon} from "../"
 import styles from './Breadcrumb.module.scss';
 
 export const Breadcrumb = (props) => { 

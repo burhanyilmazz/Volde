@@ -3,10 +3,29 @@ import Image from "next/image";
 
 import { Layout } from "../../layout";
 import styles from "../../assets/styles/Blog-detail.module.scss";
-import { CardBlog, GalleryImage, ShareMedia, Modal } from "../../components";
+import { CardBlog, GalleryImage, ShareMedia, Modal, Breadcrumb } from "../../components";
 
 export default function BlogDetail() {
   const [modalImage, setModalImage] = useState();
+
+  const breadcrumbList = [
+    {
+      title: 'Anasayfa',
+      href: '/'
+    },
+    {
+      title: 'Sektörler',
+      href: '/'
+    },
+    {
+      title: 'Kimya',
+      href: '/'
+    },
+    {
+      title: "Karıştırıcı ve Reaktör",
+      href: '/'
+    }
+  ]
 
   const gallery = [
     {
@@ -34,6 +53,7 @@ export default function BlogDetail() {
   return (
     <>
       <Layout>
+        <Breadcrumb data={breadcrumbList} />
         <section className={styles["blog-detail"]}>
           <div className={styles["blog-detail__block"]}>
             <div className={styles["blog-detail__title"]}>

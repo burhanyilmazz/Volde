@@ -2,7 +2,7 @@
   display: flex;
 
   &__content {
-    background: url("/images/line-2.svg") right bottom #E8E8E8 no-repeat;
+    background: url("/images/line-2.svg") right bottom #e8e8e8 no-repeat;
     padding: 200px 170px;
     width: 50%;
 
@@ -16,7 +16,6 @@
       }
     }
   }
-
 
   &__title {
     position: relative;
@@ -72,8 +71,7 @@
           font-size: 18px;
           line-height: 26px;
           font-weight: 300;
-          color: #231F20;
-
+          color: #231f20;
         }
       }
     }
@@ -88,7 +86,7 @@
       object-fit: cover;
     }
   }
-  
+
   &__maps {
     position: relative;
     width: 50%;

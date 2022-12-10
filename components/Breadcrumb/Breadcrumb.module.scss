@@ -5,15 +5,25 @@
   line-height: 16px;
   position: absolute;
   left: 170px;
-  border-left: 1px solid rgba($color: #8C8F95, $alpha: .4);
+  border-left: 1px solid rgba($color: #8c8f95, $alpha: 0.4);
   display: flex;
   align-items: center;
   height: 40px;
   padding-left: 30px;
   top: 25px;
 
-  @media screen and (max-width: 1024px) {
-    display: none;
+  @media screen and (max-width: 1366px) {
+    position: absolute;
+    left: auto;
+    top: auto;
+    border: 0;
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 36px;
+
+    &--unmobile {
+      display: none;
+    }
   }
 
   li {
@@ -22,17 +32,16 @@
     display: inline-flex;
 
     a {
-      color: #8C8F95;
+      color: #8c8f95;
       display: inline-flex;
       align-items: center;
-
 
       &::after {
         position: absolute;
         content: "";
         width: 5px;
         height: 5px;
-        background: rgba($color: #8C8F95, $alpha: .4);
+        background: rgba($color: #8c8f95, $alpha: 0.4);
         border-radius: 100%;
         right: -15px;
         top: 7\3px;
@@ -43,7 +52,7 @@
       a {
         color: #000;
 
-        &::after{
+        &::after {
           display: none;
         }
       }

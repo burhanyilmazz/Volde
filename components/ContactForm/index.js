@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
 
-import { FormInput, FormTextarea, Button, FormCheckbox, FileInput } from "../"
+import { FormInput, FormTextarea, Button, FormCheckbox, FileInput, Modal, Icon } from "../"
 import styles from './ContactForm.module.scss';
 
 export const ContactForm = (props) => {
   const { className, hr, title, text } = props;
   const [checkboxAllow, setCheckboxAllow] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const contactSchema = Yup.object().shape({
     email: Yup.string()
@@ -39,6 +40,7 @@ export const ContactForm = (props) => {
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true)
       console.log(values)
+      setModalOpen(true)
     },
   })
 
@@ -144,7 +146,7 @@ export const ContactForm = (props) => {
               className={classNames({'is-invalid': formik.touched.permission && formik.errors.permission})}
             />
           </div>
-          <div className={'form-group-buttons'}>
+          <div className={classNames('form-group-buttons', {'form-group-buttons--column': !hr})}>
             <div className={classNames('captcha', { 'is-invalid': formik.touched.recaptcha && formik.errors.recaptcha })}>
               <div id="captcha"></div>
               <pre>{formik.errors.recaptcha}</pre>
@@ -154,6 +156,15 @@ export const ContactForm = (props) => {
 
         </form>
       </div>
+
+      {modalOpen && <Modal onClose={() => setModalOpen(false)}>
+        <div className='success-modal'>
+          <div className='success-modal__icon'><Icon icon='check' /></div>
+          <div className='success-modal__title'>Tebrikler!</div>
+          <div className='success-modal__text'>E-Bülten kaydınız gerçekleşti.</div>
+          <div className='success-modal__desc'>E-Posta kaydınız veritabanımıza başarıyla tanımlanmıştır. Teşekkürler.</div>
+        </div>
+      </Modal> }
     </>
   )
 }

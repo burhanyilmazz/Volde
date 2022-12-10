@@ -31,6 +31,13 @@ export default function Blog() {
             <Button2 locale href={"/blog"} text={"Genel"} />
             <Button2 locale href={"/blog"} text={"Fuar"} />
           </div>
+          <div className={styles["blog__select"]}>
+            <select defaultValue={'default'}>
+              <option disabled value={'default'}>Kategori Seçiniz</option>
+              <option value={'Genel'}>Genel</option>
+              <option value={'Fuar'}>Fuar</option>
+            </select>
+          </div>
           <div className={styles["blog__content"]}>
             <CardBlog />
             <CardBlog />

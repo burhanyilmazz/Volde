@@ -78,11 +78,17 @@
           color: #a7a8a9;
           font-size: 20px;
 
+          @media screen and (max-width: 1366px) {
+            height: 90px;
+          }
+
           @media screen and (max-width: 1280px) {
             padding-left: 20px;
             padding-right: 45px;
             font-size: 18px;
           }
+
+          
 
           &[data-dirty="true"],
           &[data-dirty-important="true"],

@@ -2,8 +2,7 @@ import Image from "next/image";
 
 import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
-import { CarouselSector, Information } from "../../components";
-import { LeftNav, Breadcrumb } from "../../components/";
+import { CarouselSector, Information, LeftNav, Breadcrumb, Card } from "../../components";
 
 import { navlist } from '../../utils/Nav';
 
@@ -33,7 +32,7 @@ export default function Sector() {
     <>
       <Layout>
         <LeftNav data={navDataChild} />
-        <Breadcrumb data={breadcrumbList} />
+        <Breadcrumb data={breadcrumbList} unmobile />
         <section className={"block"}>
           <div className={"block__content"}>
             <h2>Karıştırıcı ve Reaktör</h2>
@@ -100,6 +99,18 @@ export default function Sector() {
           </div>
 
           <Information />
+        </section>
+
+        <section className={styles['systems']}>
+          <h2>İlgili Sistemler</h2>
+          <div className={styles['card-list']}>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
         </section>
       </Layout>
     </>

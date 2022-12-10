@@ -5,10 +5,10 @@ import Link from 'next/link'
 import styles from './Breadcrumb.module.scss';
 
 export const Breadcrumb = (props) => { 
-  const { className, data } = props;
+  const { className, data, unmobile } = props;
   
   return (
-    <ul className={classNames(styles['breadcrumb'], className)}>
+    <ul className={classNames(styles['breadcrumb'], {[styles['breadcrumb--unmobile']]: unmobile}, className)}>
       {
         data?.map((item, index) => {
           return (
@@ -27,4 +27,5 @@ export const Breadcrumb = (props) => {
 Breadcrumb.propTypes = {
   className: PropTypes.string,
 	data: PropTypes.array,
+	unmobile: PropTypes.bool,
 };

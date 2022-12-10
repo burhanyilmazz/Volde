@@ -5,8 +5,10 @@
 
   &__content {
     background: url("/images/line-2.svg") right bottom #f8f7f7 no-repeat;
+    background-size: clamp(300px, 30vw, 600px);
     width: 50%;
     padding: 170px;
+    padding-right: 0 !important;
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
@@ -27,6 +29,7 @@
       order: 2;
       background: #fff !important;
       min-height: auto;
+      padding-right: 36px !important;
     }
 
     h2 {
@@ -41,6 +44,7 @@
 
     .career__content {
       background: url("/images/line-2.svg") right bottom #fff no-repeat;
+      background-size: clamp(300px, 30vw, 600px);
     }
   }
 

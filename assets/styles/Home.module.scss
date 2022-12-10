@@ -11,14 +11,14 @@
   height: 100%;
   display: flex;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1366px) {
     display: none;
   }
 }
 
 .language {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 33px;
   top: 50%;
   width: 100%;
@@ -45,7 +45,7 @@
     background: url("/images/line-2.svg") right bottom #fff no-repeat;
     padding: 200px 170px;
     width: 50%;
-    background-size: clamp(400px, 35vw, 600px);
+    background-size: clamp(300px, 30vw, 600px);
 
     @media screen and (max-width: 1366px) {
       padding-right: 100px;
@@ -196,11 +196,15 @@
   border-bottom: 1px solid #d1d1d1;
   position: relative;
 
+  &:last-child {
+    border-right: 0;
+  }
+
   &:before {
     width: 100%;
     height: 4px;
     content: "";
-    background: #d60812;
+    background: #6f7983;
     position: absolute;
     top: 0;
     left: 0;
@@ -213,6 +217,7 @@
 
     &:before {
       opacity: 1;
+      background: #d60812 !important;
     }
   }
 

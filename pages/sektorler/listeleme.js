@@ -28,7 +28,7 @@ export default function List() {
     <>
       <Layout>
         <LeftNav data={navlist.find(item => item.type === 'sectors')} />
-        <Breadcrumb data={breadcrumbList} />
+        <Breadcrumb data={breadcrumbList} unmobile />
         <section className={styles["list"]}>
           <div className={styles["list__content"]}>
             <h2>Maden & Mineral</h2>

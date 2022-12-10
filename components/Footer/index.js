@@ -1,19 +1,21 @@
+import { useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import classNames from 'classnames';
 import slug from 'slug'
 
-import { SocialMedia, Logo, Newsletter, Library } from '../';
+import { SocialMedia, Logo, Newsletter, Library, Modal, Icon } from '../';
 
 import { navlist } from '../../utils/Nav';
 
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
       <section className={styles['foot']}>
-        <Newsletter />
+        <Newsletter handleSubmit={() => setModalOpen(true)} />
         <Library />
       </section>
       <footer className={styles['footer']}>
@@ -66,6 +68,15 @@ export const Footer = () => {
           </div>
         </div>
       </footer>
+
+      {modalOpen && <Modal onClose={() => setModalOpen(false)}>
+        <div className='success-modal'>
+          <div className='success-modal__icon'><Icon icon='check' /></div>
+          <div className='success-modal__title'>Tebrikler!</div>
+          <div className='success-modal__text'>E-Bülten kaydınız gerçekleşti.</div>
+          <div className='success-modal__desc'>E-Posta kaydınız veritabanımıza başarıyla tanımlanmıştır. Teşekkürler.</div>
+        </div>
+      </Modal> }
     </>
   )
 }

@@ -29,7 +29,7 @@ export default function Service() {
     <>
       <Layout>
         <LeftNav data={navlist.find(item => item.type === 'services')} />
-        <Breadcrumb data={breadcrumbList} />
+        <Breadcrumb data={breadcrumbList} unmobile />
         <section className={"block"}>
           <div className={"block__content"}>
             <div className={"block__title"}>

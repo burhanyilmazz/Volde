@@ -9,7 +9,7 @@ import {Icon, FormInput, Button} from "../"
 import styles from './Newsletter.module.scss';
 
 export const Newsletter = (props) => { 
-  const { className } = props;
+  const { className, handleSubmit } = props;
 
   const newsletterSchema = Yup.object().shape({
     email: Yup.string()
@@ -27,6 +27,7 @@ export const Newsletter = (props) => {
     onSubmit: async (values, {setSubmitting}) => {
       setSubmitting(true)
       console.log(values)
+      handleSubmit && handleSubmit()
     },
   })
   
@@ -61,4 +62,5 @@ export const Newsletter = (props) => {
 Newsletter.propTypes = {
 	className: PropTypes.string,
 	title: PropTypes.bool,
+  handleSubmit: PropTypes.func
 };

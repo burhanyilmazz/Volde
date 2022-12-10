@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 170px;
+  background: #F8F7F7;
 
   @media screen and (max-width: 1366px) {
     padding: 170px 100px;
@@ -22,6 +23,10 @@
     text-align: left;
     font-weight: 600;
     font-size: clamp(24px, 2.5vw, 32px);
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 80px;
+    }
   }
 
   &__content {
@@ -36,6 +41,10 @@
 
     > a {
       width: calc(33.333% - 27px);
+
+      @media screen and (max-width: 1366px) {
+        width: calc(33.333% - 20px);
+      }
 
       @media screen and (max-width: 1024px) {
         width: calc(50% - 15px);
@@ -53,7 +62,40 @@
     width: 100%;
     margin: 50px 0;
     padding: 0 10px;
-    gap: 30px
+    gap: 15px;
+
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    margin: 40px 0;
+    position: relative;
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: block;
+    }
+    select {
+      width: 100%;
+      font-size: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    &:after {
+      border: solid #35373C;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 4px;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+      transform: rotate(45deg);
+    }
   }
 
   .group-buttons {

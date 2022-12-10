@@ -11,7 +11,7 @@ export const Button2 = (props) => {
   const handleClick = () => onClick && onClick();
   
   return (
-    <div className={classNames(styles['button'], className)}>
+    <div className={classNames(styles['button'], {[styles['button--icon']]: icon}, className)}>
       {locale && <Link href={href}><div className={styles['button__content']}>{text}{icon && <Icon icon={'arrow'} />}</div></Link> }
       {!locale && !button && <a href={href} target={target} onClick={handleClick}><div className={styles['button__content']}>{text}{icon && <Icon icon={'arrow'} />}</div></a> }
       {button && !locale && <button onClick={handleClick} aria-label={icon ? 'icon buton' : text}><div className={styles['button__content']}>{text}{icon && <Icon icon={'arrow'} />}</div></button> }

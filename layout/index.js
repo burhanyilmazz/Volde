@@ -19,6 +19,7 @@ export const Layout = (props) => {
       ? document.querySelector('html').classList.add('disable-scroll') 
       : document.querySelector('html').classList.remove('disable-scroll')
     setSidebarOpen(event)
+    setSearchOpen(false)
   }
 
   const handleOnClickSearch = (event) => {
@@ -38,10 +39,10 @@ export const Layout = (props) => {
       </Head>
 
       <Header />
-      <Hamburger onClick={(event) => handleOnClickNav(event)}/>
+      <Hamburger isOpen={sidebarOpen} onClick={(event) => handleOnClickNav(event)}/>
       <Sidebar nav={navlist} isShow={sidebarOpen} outsideClick={(event) => handleOnClickNav(event)} />
       <MobileNav nav={navlist} isShow={sidebarOpen} />
-      <div className={styles['search']} onClick={(event) => handleOnClickSearch(event)}>
+      <div className={styles['search']} onClick={() => handleOnClickSearch(!searchOpen)}>
         <Icon icon={'search'} />
       </div>
       <SearchBar isShow={searchOpen} outsideClick={(event) => handleOnClickSearch(event)} />

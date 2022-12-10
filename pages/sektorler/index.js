@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
-import { Information } from "../../components";
+import { CarouselSector, Information } from "../../components";
 import { LeftNav, Breadcrumb } from "../../components/";
 
 import { navlist } from '../../utils/Nav';
@@ -52,12 +52,7 @@ export default function Sector() {
             </div>
           </div>
           <div className={"block__image"}>
-            <Image
-              src={"/images/img/sektor.jpg"}
-              width={"940"}
-              height={"1080"}
-              alt={"Sürdürülebilirlik"}
-            />
+            <CarouselSector />
           </div>
         </section>
         

@@ -19,13 +19,14 @@ export default function Career() {
           </div>
           <div className={styles["career__image"]}>
             <Image
-              src={"/images/img/hizmet.png"}
+              src={"/images/img/kariyer.png"}
               width={"940"}
               height={"1080"}
               alt={"Sürdürülebilirlik"}
             />
           </div>
         </section>
+
         <section className={styles["career"]}>
           <div className={styles["career__content"]}>
             <h2>Etik Uygulamalar</h2>
@@ -35,6 +36,7 @@ export default function Career() {
             </div>
           </div>
         </section>
+        
         <section className={classNames(styles["career"], styles["white"])}>
           <div className={styles["career__content"]}>
             <h2>İşe Alım Süreci</h2>
@@ -44,7 +46,14 @@ export default function Career() {
             </div>
           </div>
         </section>
-        <ContactForm title field="Bizimle iletişime geçin" />
+        
+        <section className={classNames(styles["career"], styles['career-form'])}>
+          <ContactForm
+            hr
+            title="Bizimle iletişime geçin"
+            text={'Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit.'}
+          />
+        </section>
       </Layout>
     </>
   );

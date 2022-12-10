@@ -7,7 +7,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  width: 610px !important;
+  width: 100%;
   margin-top: 10px;
 
   span {
@@ -21,7 +21,7 @@
       position: absolute;
       display: none;
       font-size: 10px;
-      left: calc(50% - 4px);
+      left: calc(50% - 5px);
       top: calc(50% - 4px);
       color: #fff;
       z-index: 2;
@@ -32,25 +32,27 @@
       height: 34px;
       content: "";
       position: relative;
-      border: 1px solid #A7A8A9;
-      background: #E8E8E8;
+      border: 1px solid #a7a8a9;
+      background: #e8e8e8;
       border-radius: 3px;
       z-index: 1;
       top: 5px;
     }
 
-    & + div{
+    & + div {
       font-size: 14px;
       line-height: 23px;
       font-weight: 300;
+      width: calc(100% - 54px);
+      max-width: 500px;
     }
   }
 
-  & input:checked {
+  input:checked {
     ~ span {
       &:after {
-        background: #4A4F54;
-        border-color: #4A4F54;
+        background: #4a4f54;
+        border-color: #4a4f54;
       }
       &:before {
         display: block;

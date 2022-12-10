@@ -73,11 +73,11 @@ export default function Communication() {
                 </li>
                 <li>
                   <Icon icon={'phone'} />
-                  <span><a href="tel:+90 216 527 17 34">+90 216 527 17 34</a></span>
+                  <span><a href="tel:02165271734">+90 216 527 17 34</a></span>
                 </li>
                 <li>
                   <Icon icon={'email-1'} />
-                  <span><a href="mailto: info@voldeglobal.com">info@voldeglobal.com</a></span>
+                  <span><a href="mailto:info@voldeglobal.com">info@voldeglobal.com</a></span>
                 </li>
               </ul>
             </div>
@@ -92,7 +92,12 @@ export default function Communication() {
           </div>
         </section>
         <section className={classNames(styles["communication"], styles["white"])}>
-          <ContactForm communication title field="İletişim Formu" />
+          <div className={styles["communication__form"]}>
+            <ContactForm 
+              title="İletişim Formu" 
+              text={'Lorem Ipsum is simply dummy typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.'} 
+            />
+          </div>
           <div className={styles["communication__maps"]}>
             <div id="map" ref={googlemap} />
           </div>

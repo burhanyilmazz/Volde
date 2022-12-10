@@ -20,7 +20,7 @@
     &[data-dirty-important="true"],
     &:focus {
       & ~ label {
-        transform: translate(0px, 20px) scale(0.75);
+        transform: translate(0px, 15px) scale(0.75);
       }
     }
 
@@ -69,6 +69,7 @@
     transition-property: transform, font-size;
     will-change: transform, font-size;
     transition: 150ms cubic-bezier(0, 0, 0.2, 1);
+    color: #33364D;
   }
 
   pre {

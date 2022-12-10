@@ -1,14 +1,36 @@
 .career {
   display: flex;
+  flex-wrap: wrap;
   background: #f8f7f7;
 
   &__content {
     background: url("/images/line-2.svg") right bottom #f8f7f7 no-repeat;
     width: 50%;
-    padding: 370px 250px 335px 170px;
+    padding: 170px;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 1;
+
+    @media screen and (max-width: 1366px) {
+      padding: 100px;
+    }
+  
+    @media screen and (max-width: 1280px) {
+      padding: 36px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      order: 2;
+      background: #fff !important;
+      min-height: auto;
+    }
 
     h2 {
-      font-size: 32px;
+      font-size: clamp(24px, 2.5vw, 32px);
       line-height: 40px;
       font-weight: 400;
     }
@@ -25,5 +47,38 @@
   &__image {
     position: fixed;
     right: 0;
+    width: 50%;
+    order: 2;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      order: 1;
+      position: relative;
+      right: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  &-form {
+    position: relative;
+    z-index: 2;
+    padding: 200px 170px;
+
+    @media screen and (max-width: 1366px) {
+      padding: 200px 100px;
+    }
+  
+    @media screen and (max-width: 1280px) {
+      padding: 150px 36px;
+    }
+  
+    @media screen and (max-width: 1024px) {
+      padding: 36px;
+    }
   }
 }

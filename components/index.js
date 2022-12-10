@@ -28,3 +28,5 @@ export * from './SearchBar';
 export * from './Breadcrumb';
 export * from './MobileNav';
 export * from './LeftNav';
+export * from './FileInput';
+export * from './CarouselSector';

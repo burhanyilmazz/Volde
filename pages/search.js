@@ -10,11 +10,10 @@ export default function SearchPage() {
     <>
       <Layout>
         <section className={styles["search"]}>
-          <div className={styles["search__content"]}>
-            <h2>Arama Sonuçları</h2>
-          </div>
+          <h2>Arama Sonuçları</h2>
           <Search />
           <h3>Toplam 28 adet sonuç bulunmuştur.</h3>
+          
           <div className={styles["item"]}>
             <div className={styles["content"]}>
               <h3>Karıştırıcı ve Reaktör</h3>

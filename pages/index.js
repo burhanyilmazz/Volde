@@ -5,7 +5,7 @@ import Headroom from 'headroom.js';
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import { Navigation, A11y } from 'swiper';
+import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Accordion,
@@ -18,6 +18,7 @@ import {
 import 'react-accessible-accordion/dist/fancy-example.css';
 
 import 'swiper/css';
+import 'swiper/css/pagination';
 import 'react-tabs/style/react-tabs.css';
 
 import { Layout } from '../layout'
@@ -447,13 +448,14 @@ export default function Home() {
           </div>
           <div className={styles['blog__slider']}>
             <Swiper
-              modules={[Navigation, A11y]}
+              modules={[Navigation, Pagination]}
               slidesPerView={'auto'}
               spaceBetween={0}
               navigation={{
                 nextEl: `.${styles['next']}`,
                 prevEl: `.${styles['prev']}`
               }}
+              pagination
               className={'blog__carousel'}
             >
               <SwiperSlide><CardBlog /></SwiperSlide>

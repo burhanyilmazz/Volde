@@ -5,7 +5,7 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/Blog-detail.module.scss";
 import { CardBlog, GalleryImage, ShareMedia, Modal, Breadcrumb } from "../../components";
 
-export default function BlogDetail() {
+export default function BlogDetail({navlist}) {
   const [modalImage, setModalImage] = useState();
 
   const breadcrumbList = [
@@ -52,7 +52,7 @@ export default function BlogDetail() {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <Breadcrumb data={breadcrumbList} />
         <section className={styles["blog-detail"]}>
           <div className={styles["blog-detail__block"]}>
@@ -144,4 +144,24 @@ export default function BlogDetail() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

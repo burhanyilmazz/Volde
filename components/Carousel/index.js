@@ -33,27 +33,18 @@ export const Carousel = (props) => {
         }}
         className={classNames('carousel', className)}
       >
-        <SwiperSlide className={styles['carousel__slide']} data-thumb='/images/carousel/slide-1/thumb.svg'>
+        { data.map((item, index) => <SwiperSlide key={index} className={styles['carousel__slide']} data-thumb={item.third_image}>
           <div className={styles['slide-content']}>
-            <div className={styles['slide-content__title']}>more is possible</div>
-            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-1/text.svg'} width={995} height={345} alt={'hassas dozajlama'} /></div>
-            <div className={styles['slide-content__hand']}><Image src={'/images/carousel/slide-1/hand.png'} width={1920} height={751} alt={'hassas dozajlama'} /></div>
+            <div className={styles['slide-content__title']}>{item.title}</div>
+            <div className={styles['slide-content__text']}><Image src={item.first_image} width={995} height={345} alt={item.title} priority={index === 0 ? true : false} /></div>
+            <div className={styles['slide-content__hand']}>
+              <picture>
+                <source media="(max-width: 1024px)" srcSet={item.second_image_mobile} />
+                <Image src={item.second_image} width={1920} height={751} alt={item.title} priority={index === 0 ? true : false} />
+              </picture>
+            </div>
           </div>
-        </SwiperSlide>
-        <SwiperSlide className={styles['carousel__slide']} data-thumb='/images/carousel/slide-2/thumb.svg'>
-          <div className={styles['slide-content']}>
-            <div className={styles['slide-content__title']}>more is possible</div>
-            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-2/text.svg'} width={707} height={358} alt={'güvenli taşıma'} /></div>
-            <div className={styles['slide-content__hand']}><Image src={'/images/carousel/slide-2/hand.png'} width={1920} height={771} alt={'güvenli taşıma'} /></div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={styles['carousel__slide']} data-thumb='/images/carousel/slide-3/thumb.svg'>
-          <div className={styles['slide-content']}>
-            <div className={styles['slide-content__title']}>more is possible</div>
-            <div className={styles['slide-content__text']}><Image src={'/images/carousel/slide-3/text.svg'} width={889} height={317} alt={'pratik stoklama'} /></div>
-            <div className={styles['slide-content__hand']}><Image src={'/images/carousel/slide-3/hand.png'} width={1920} height={811} alt={'pratik stoklama'} /></div>
-          </div>
-        </SwiperSlide>
+        </SwiperSlide> )}
       </Swiper>
     </div>
   )

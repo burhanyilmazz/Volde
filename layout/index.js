@@ -4,9 +4,7 @@ import { Header, Footer, Sidebar, MobileNav, Hamburger, SearchBar, Icon } from '
 
 import styles from './Layout.module.scss';
 
-import { navlist } from '../utils/Nav';
-
-export const Layout = (props) => {
+export const Layout = ({navlist, children}) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -29,7 +27,7 @@ export const Layout = (props) => {
     setSidebarOpen(false)
     setSearchOpen(event)
   }
-
+  
   return (
     <>
       <Head>
@@ -37,6 +35,8 @@ export const Layout = (props) => {
         <meta name="description" content="Volde" />
         <link rel="icon" href="/images/logo/logo.svg" />
       </Head>
+
+      
 
       <Header />
       <Hamburger isOpen={sidebarOpen} onClick={(event) => handleOnClickNav(event)}/>
@@ -47,9 +47,9 @@ export const Layout = (props) => {
       </div>
       <SearchBar isShow={searchOpen} outsideClick={(event) => handleOnClickSearch(event)} />
       <main>
-        {props.children}
+        {children}
       </main>
-      <Footer />
+      <Footer navlist={navlist} />
     </>
   )
 }

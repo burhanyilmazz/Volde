@@ -26,7 +26,7 @@ import styles from '../assets/styles/Home.module.scss'
 import { Button, Button2, CardBlog, Card, Carousel, ScrollIcon } from '../components';
 import Link from 'next/link'
 
-export default function Home() {
+export default function Home({navlist, sliders, mainpage}) {
 
   useEffect(() => {
     const myElement = document.querySelector('header');
@@ -53,9 +53,9 @@ export default function Home() {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <section className={styles['carousel']}>
-          <Carousel />
+          <Carousel data={sliders} />
           <ScrollIcon className={styles['scroll']} />
           <div className={styles['right-bar']}>
             <div className={styles['language']}><Link href="/en">EN</Link></div>
@@ -64,12 +64,12 @@ export default function Home() {
 
         <section className={styles['block']}>
           <div  className={styles['block__content']}>
-            <h2>her zaman<br /><span>daha fazlası<br />mümkün!</span></h2>
-            <div className={styles['block__text']}>Plastik, kimya, maden, deterjan, gıda gibi çeşitli endüstriyel alanlarda toz, granül ve likit hammade üretimi yapan müşterilerimiz için hassas tartım, mikro dozajlama, uygun taşıma olmalı. ve güvenli stoklama sistemlerimiz ile yüksek teknolojili tam otomasyonlar geliştiriyoruz.</div>
-            <Button text={'Devamı...'} locale href={'#'} className={styles['block__button']} />
+            <h2 dangerouslySetInnerHTML={{__html: mainpage.section1_title}} />
+            <div className={styles['block__text']} dangerouslySetInnerHTML={{__html: mainpage.section1_content}} />
+            <Button text={'Devamı...'} locale href={mainpage.section1_url} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
-            <Image src={'/images/home/hero.jpg'} width={'940'} height={'1080'} alt={'Sürdürülebilirlik'} />
+            <Image src={mainpage.section1_image} width={'940'} height={'1080'} alt={mainpage.section1_title} />
           </div>
         </section>
 
@@ -405,28 +405,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles['video']}>
+        {mainpage.section2_video && <section className={styles['video']}>
           <video width="1920" height="1080" autoPlay muted loop>
-            <source src="/video/volde-video.mp4" type="video/mp4" />
+            <source src={mainpage.section2_video} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </section>
+        </section>}
 
         <section className={classNames(styles['block'], styles['block--reverse'])}>
           <div  className={styles['block__content']}>
-            <h2>TECRÜBE<br />TEKNOLOJİ<br />TASARIM</h2>
-            <div className={styles['block__text']}>Lorem Ipsum is simply dummy typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</div>
-            <Button text={'Devamı...'} locale href={'#'} className={styles['block__button']} />
+            <h2 dangerouslySetInnerHTML={{__html: mainpage.section3_title}} />
+            <div className={styles['block__text']} dangerouslySetInnerHTML={{__html: mainpage.section3_content}} />            
+            <Button text={'Devamı...'} locale href={mainpage.section3_url} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
-            <Image src={'/images/home/tecrube.jpg'} width={'940'} height={'1080'} alt={'Sürdürülebilirlik'} />
+            <Image src={mainpage.section3_image} width={'940'} height={'1080'} alt={mainpage.section3_title} />
           </div>
         </section>
 
         <section className={styles['block']}>
           <div  className={styles['block__content']}>
-            <h2>Sürdürülebilirlik</h2>
-            <div className={styles['block__text']}>Lorem Ipsum is simply dummy typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</div>
+          <h2 dangerouslySetInnerHTML={{__html: mainpage.section4_title}} />
+            <div className={styles['block__text']} dangerouslySetInnerHTML={{__html: mainpage.section4_content}} /> 
             <Button text={'Devamı...'} locale href={'#'} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
@@ -475,4 +475,28 @@ export default function Home() {
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+  const sliders = await fetch(`${process.env.API_URL}/sliders`, options).then(r => r.json()).then(data => data.Result);
+  const mainpage = await fetch(`${process.env.API_URL}/mainpage`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist,
+      sliders,
+      mainpage
+    },
+    revalidate: 10,
+  }
 }

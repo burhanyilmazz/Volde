@@ -13,8 +13,8 @@ export const Sidebar = (props) => {
 
   const [search, setSearch] = useState(false)
   const [list, setList] = useState(nav)
-  const [sectors, setSectors] = useState(nav.filter(item => item.type === 'sectors'))
-  const [systems, setSystems] = useState(nav.filter(item => item.type === 'systems'))
+  const [sectors, setSectors] = useState(nav?.filter(item => item.type === 'sectors'))
+  const [systems, setSystems] = useState(nav?.filter(item => item.type === 'systems'))
 
   const onClickNav = (index) => {
     list[index].isOpen = !list[index].isOpen;
@@ -60,7 +60,7 @@ export const Sidebar = (props) => {
         <nav>
           <ul>
             {
-              list.map((item, index) => {
+              list?.map((item, index) => {
                 if (item.type === 'sectors' || item.type === 'systems') return false;
 
                 if (item.children) {
@@ -101,9 +101,9 @@ export const Sidebar = (props) => {
       <div className={classNames(styles['page'], styles['page-2'])}>
         <nav>
           <h3>Sektörler</h3>
-          <ul>
+          {sectors && <ul>
             {
-              sectors[0].children.map((item, index) => {
+              sectors[0]?.children?.map((item, index) => {
                 return (
                   <li
                     className={classNames({[styles['nav--active']] : item.isActive, [styles['nav--open']] : item.isOpen })} 
@@ -124,15 +124,15 @@ export const Sidebar = (props) => {
                 )
               })
             }
-          </ul>
+          </ul>}
         </nav>
       </div>
       <div className={classNames(styles['page'], styles['page-3'])}>
         <nav>
           <h3>Sistemler</h3>
-          <ul>
+          {systems && <ul>
             {
-              systems[0].children.map((item, index) => {
+              systems[0]?.children?.map((item, index) => {
                 return (
                   <li
                     className={classNames({[styles['nav--active']] : item.isActive, [styles['nav--open']] : item.isOpen })} 
@@ -153,7 +153,7 @@ export const Sidebar = (props) => {
                 )
               })
             }
-          </ul>
+          </ul>}
         </nav>
       </div>
     </aside>

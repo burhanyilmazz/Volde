@@ -10,7 +10,7 @@ import styles from './MobileNav.module.scss';
 
 export const MobileNav = (props) => {
   const { isShow, nav } = props;
-  const [list, setList] = useState(nav)
+  const [list] = useState(nav)
   const [childList, setChildList] = useState(null)
   const [grandList, setGrandList] = useState(null)
 
@@ -34,7 +34,7 @@ export const MobileNav = (props) => {
         <nav>
           <ul>
             {
-              list.map((item, index) => {
+              list?.map((item, index) => {
                 return (
                   <li
                     className={classNames({[styles['nav--active']] : item.isActive, [styles['nav--open']] : item.isOpen })} 

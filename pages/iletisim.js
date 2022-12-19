@@ -10,8 +10,7 @@ import { ContactForm, Icon } from "../components";
 
 import { mapOptions } from '../utils/Map';
 
-
-export default function Communication() {
+export default function Communication({navlist}) {
   const googlemap = useRef(null);
   const contact = [
     {
@@ -58,7 +57,7 @@ export default function Communication() {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <section className={styles["communication"]}>
           <div className={styles["communication__content"]}>
             <div className={styles["communication__title"]}>
@@ -105,4 +104,24 @@ export default function Communication() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

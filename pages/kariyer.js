@@ -5,10 +5,10 @@ import { Layout } from "../layout";
 import styles from "../assets/styles/Career.module.scss";
 import { ContactForm } from "../components";
 
-export default function Career() {
+export default function Career({navlist}) {
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <section className={classNames(styles["career"], styles["white"])}>
           <div className={styles["career__content"]}>
             <h2>İK Politikamız</h2>
@@ -57,4 +57,24 @@ export default function Career() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

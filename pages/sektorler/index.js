@@ -4,9 +4,9 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
 import { CarouselSector, Information, LeftNav, Breadcrumb, Card } from "../../components";
 
-import { navlist } from '../../utils/Nav';
 
-export default function Sector() {
+
+export default function Sector({navlist}) {
   const navDataParent = navlist.find(item => item.type === 'sectors')
   const navDataChild = navDataParent.children[0];
   const breadcrumbList = [
@@ -30,7 +30,7 @@ export default function Sector() {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <LeftNav data={navDataChild} />
         <Breadcrumb data={breadcrumbList} unmobile />
         <section className={"block"}>
@@ -89,6 +89,8 @@ export default function Sector() {
                 height={"500"}
                 alt={"Sürdürülebilirlik"}
               />
+            </div>
+            <div className={styles["product__image"]}>
               <Image
                 src={"/images/img/reflektor.jpg"}
                 width={"770"}
@@ -115,4 +117,24 @@ export default function Sector() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

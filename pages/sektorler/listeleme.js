@@ -2,9 +2,9 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/List.module.scss";
 import { Card, LeftNav, Breadcrumb } from "../../components";
 
-import { navlist } from '../../utils/Nav';
 
-export default function List() {
+
+export default function List({navlist}) {
   const breadcrumbList = [
     {
       title: 'Anasayfa',
@@ -26,7 +26,7 @@ export default function List() {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <LeftNav data={navlist.find(item => item.type === 'sectors')} />
         <Breadcrumb data={breadcrumbList} unmobile />
         <section className={styles["list"]}>
@@ -55,4 +55,24 @@ export default function List() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

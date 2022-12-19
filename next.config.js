@@ -8,6 +8,12 @@ const nextConfig = {
       },
       styledComponents: true
    },
+   images: {
+      domains: ['volde.ozanuzer.com']
+   },
+   env: {
+      API_URL: 'https://volde.ozanuzer.com/api'
+   },
 }
 
 module.exports = nextConfig

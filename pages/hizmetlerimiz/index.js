@@ -3,9 +3,9 @@ import Image from "next/image";
 import { Layout } from "../../layout";
 import { Breadcrumb, LeftNav } from "../../components/";
 
-import { navlist } from '../../utils/Nav';
 
-export default function Service() {
+
+export default function Service({navlist}) {
   const breadcrumbList = [
     {
       title: 'Anasayfa',
@@ -27,7 +27,7 @@ export default function Service() {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <LeftNav data={navlist.find(item => item.type === 'services')} />
         <Breadcrumb data={breadcrumbList} unmobile />
         <section className={"block"}>
@@ -56,4 +56,24 @@ export default function Service() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

@@ -2,7 +2,7 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/Blog.module.scss";
 import { CardBlog, Button2, Breadcrumb } from "../../components";
 
-export default function Blog() {
+export default function Blog({navlist}) {
   const breadcrumbList = [
     {
       title: 'Anasayfa',
@@ -23,7 +23,7 @@ export default function Blog() {
   ]
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <Breadcrumb data={breadcrumbList} />
         <section className={styles["blog"]}>
           <h2>Blog</h2>
@@ -54,4 +54,24 @@ export default function Blog() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

@@ -4,11 +4,11 @@ import { Layout } from "../layout";
 import styles from "../assets/styles/Search.module.scss";
 import { Search, Icon } from "../components";
 
-export default function SearchPage() {
+export default function SearchPage({navlist}) {
 
   return (
     <>
-      <Layout>
+      <Layout navlist={navlist}>
         <section className={styles["search"]}>
           <h2>Arama Sonuçları</h2>
           <Search />
@@ -67,4 +67,24 @@ export default function SearchPage() {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
 }

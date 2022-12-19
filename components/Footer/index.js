@@ -6,11 +6,9 @@ import slug from 'slug'
 
 import { SocialMedia, Logo, Newsletter, Library, Modal, Icon } from '../';
 
-import { navlist } from '../../utils/Nav';
-
 import styles from './Footer.module.scss';
 
-export const Footer = () => {
+export const Footer = ({navlist}) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
@@ -28,7 +26,7 @@ export const Footer = () => {
                     <h6>{item.title}</h6>
                     <ul>
                       {
-                        item.children.map((child, i) => {
+                        item?.children?.map((child, i) => {
                           return (
                             <li key={i}><Link href={`${item.folder}/${slug(child.title)}-${child.id}`}>{child.title}</Link></li>
                           )

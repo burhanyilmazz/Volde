@@ -1,9 +1,6 @@
 import Image from "next/image";
-
 import { Layout } from "../../layout";
 import { LeftNav, Breadcrumb } from "../../components";
-
-
 
 export default function Systems({navlist}) {
   const breadcrumbList = [
@@ -28,7 +25,7 @@ export default function Systems({navlist}) {
   return (
     <>
       <Layout navlist={navlist}>
-        <LeftNav data={navlist.find(item => item.type === 'corporate')} />
+        <LeftNav data={navlist?.find(item => item.type === 'corporate')} />
         <Breadcrumb data={breadcrumbList} unmobile />
         <section className={"block"}>
           <div className={"block__content"}>

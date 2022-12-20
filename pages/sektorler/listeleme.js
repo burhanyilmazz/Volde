@@ -2,8 +2,6 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/List.module.scss";
 import { Card, LeftNav, Breadcrumb } from "../../components";
 
-
-
 export default function List({navlist}) {
   const breadcrumbList = [
     {
@@ -27,7 +25,7 @@ export default function List({navlist}) {
   return (
     <>
       <Layout navlist={navlist}>
-        <LeftNav data={navlist.find(item => item.type === 'sectors')} />
+        <LeftNav data={navlist?.find(item => item.type === 'sectors')} />
         <Breadcrumb data={breadcrumbList} unmobile />
         <section className={styles["list"]}>
           <div className={styles["list__content"]}>

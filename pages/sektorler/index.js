@@ -1,14 +1,11 @@
 import Image from "next/image";
-
 import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
 import { CarouselSector, Information, LeftNav, Breadcrumb, Card } from "../../components";
 
-
-
 export default function Sector({navlist}) {
-  const navDataParent = navlist.find(item => item.type === 'sectors')
-  const navDataChild = navDataParent.children[0];
+  const navDataParent = navlist?.find(item => item.type === 'sectors')
+  const navDataChild = navDataParent?.children[0];
   const breadcrumbList = [
     {
       title: 'Anasayfa',

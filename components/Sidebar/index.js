@@ -113,7 +113,7 @@ export const Sidebar = (props) => {
                     <span>{item.title}</span>
                     <ul>
                       {
-                        item.children.map((child, i) => {
+                        item?.children?.map((child, i) => {
                           return (
                             <li key={i}><Link href={slug(`${item.folder}/${child.title}-${child.id}`)}>{child.title}</Link></li>
                           )
@@ -142,7 +142,7 @@ export const Sidebar = (props) => {
                     <span>{item.title}</span>
                     <ul>
                       {
-                        item.children.map((child, i) => {
+                        item?.children?.map((child, i) => {
                           return (
                             <li key={i}><Link href={slug(`${item.folder}/${child.title}-${child.id}`)}>{child.title}</Link></li>
                           )

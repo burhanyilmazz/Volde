@@ -11,7 +11,7 @@ export const LeftNav = (props) => {
   return (
     <div className={classNames(styles['left-nav'])}>
       <div className={styles['left-nav__button']}>
-        <span>{title || data.title}</span>
+        <span>{title || data?.title}</span>
         <div className={styles['hamburger']}>
           <span />
           <span />
@@ -20,9 +20,9 @@ export const LeftNav = (props) => {
         </div>
       </div>
       <div className={styles['content']}>
-        <h3>{title || data.title}</h3>
+        <h3>{title || data?.title}</h3>
         <ul>
-          { data.children.map((item, index) => <li key={index}><Link href={`${data.folder}/${slug(item.title)}-${item.id}`}>{item.title}</Link></li>)}
+          { data?.children?.map((item, index) => <li key={index}><Link href={`${data.folder}/${slug(item.title)}-${item.id}`}>{item.title}</Link></li>)}
         </ul>
       </div>
     </div>

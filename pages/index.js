@@ -405,12 +405,12 @@ export default function Home({navlist, sliders, mainpage}) {
           </div>
         </section>
 
-        {mainpage.section2_video && <section className={styles['video']}>
+        <section className={styles['video']}>
           <video width="1920" height="1080" autoPlay muted loop>
-            <source src={mainpage.section2_video} type="video/mp4" />
+            <source src={mainpage.section2_video || '/video/volde-video.mp4'} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </section>}
+        </section>
 
         <section className={classNames(styles['block'], styles['block--reverse'])}>
           <div  className={styles['block__content']}>

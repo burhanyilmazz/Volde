@@ -39,8 +39,28 @@ export const ContactForm = (props) => {
     validationSchema: contactSchema,
     onSubmit: async (values, { setSubmitting }) => {
       setSubmitting(true)
-      console.log(values)
-      setModalOpen(true)
+      
+      if (type == 'contact') {
+        
+      }
+
+      if (hr) {
+       await fetch(`${API_URL}/hr_form`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: values
+        }).then(r => r.json()).then(data => setModalOpen(true));
+      } else {
+        await fetch(`${API_URL}/contact_form`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(values)
+        }).then(r => r.json()).then(data => setModalOpen(true));
+      }
     },
   })
 

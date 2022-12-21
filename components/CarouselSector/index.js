@@ -13,7 +13,7 @@ import styles from './CarouselSector.module.scss';
 import classNames from 'classnames';
 
 export const CarouselSector = (props) => {
-  const { data, className } = props;
+  const { data, className, title } = props;
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   
   return (
@@ -29,39 +29,7 @@ export const CarouselSector = (props) => {
           }}
           className={'carousel-big'}
         >
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/kurumsal.png'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/iletisim.png'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={'/images/img/sektor.jpg'} width={1075} height={1080} alt={'pratik stoklama'} />
-          </SwiperSlide>
+          {data.map((item, index) => <SwiperSlide key={index}><Image src={item.image} width={1075} height={1080} alt={title} priority={index === 0 ? true : false} /></SwiperSlide>)}
         </Swiper>
       </div>
       
@@ -81,39 +49,7 @@ export const CarouselSector = (props) => {
             className={classNames('carousel-sector', className)}
             slideToClickedSlide
           >
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/kurumsal.png'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/iletisim.png'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
-            <SwiperSlide className={styles['carousel__slide']}>
-              <Image src={'/images/img/sektor.jpg'} width={132} height={100} alt={'pratik stoklama'} />
-            </SwiperSlide>
+            {data.map((item, index) => <SwiperSlide key={index} className={styles['carousel__slide']}><Image src={item.image} width={132} height={100} alt={title} /></SwiperSlide>)}
           </Swiper>
         </div>
         <button className={styles['next']} aria-label='next'><Icon icon='arrow' /></button>
@@ -124,5 +60,6 @@ export const CarouselSector = (props) => {
 
 CarouselSector.propTypes = {
 	data: PropTypes.array,
-  className: PropTypes.string
+  className: PropTypes.string,
+  title: PropTypes.string
 };

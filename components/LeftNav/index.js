@@ -1,3 +1,4 @@
+import {useRouter} from 'next/router'
 import classNames from 'classnames';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
@@ -7,6 +8,8 @@ import styles from './LeftNav.module.scss';
 
 export const LeftNav = (props) => { 
   const { data, title } = props;
+  const router = useRouter()
+  const id = router.query.slug.split('-').slice(-1)[0];
 
   return (
     <div className={classNames(styles['left-nav'])}>
@@ -22,7 +25,7 @@ export const LeftNav = (props) => {
       <div className={styles['content']}>
         <h3>{title || data?.title}</h3>
         <ul>
-          { data?.children?.map((item, index) => <li key={index}><Link href={`${data.folder}/${slug(item.title)}-${item.id}`}>{item.title}</Link></li>)}
+          { data?.children?.map((item, index) => <li key={index}><Link href={`/${data.folder}/${slug(item.title)}-${item.id}`} className={classNames({[styles['active']]: id == item.id})} >{item.title}</Link></li>)}
         </ul>
       </div>
     </div>

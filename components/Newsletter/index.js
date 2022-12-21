@@ -13,8 +13,8 @@ export const Newsletter = (props) => {
 
   const newsletterSchema = Yup.object().shape({
     email: Yup.string()
-      .email('Wrong format.')
-      .required('This field cannot be left blank.'),
+      .email('Geçerli bir email girin!')
+      .required('Bu alan boş bırakılamaz'),
   })
 
   const [newsletter] = useState({
@@ -26,8 +26,14 @@ export const Newsletter = (props) => {
     validationSchema: newsletterSchema,
     onSubmit: async (values, {setSubmitting}) => {
       setSubmitting(true)
-      console.log(values)
-      handleSubmit && handleSubmit()
+
+      await fetch(`${process.env.API_URL}/bulten`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      }).then(r => r.json()).then(data => handleSubmit && handleSubmit(data));
     },
   })
   

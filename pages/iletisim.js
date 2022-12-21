@@ -86,7 +86,7 @@ export default function Communication({navlist}) {
               src={"/images/img/iletisim.png"}
               width={"940"}
               height={"1080"}
-              alt={"Sürdürülebilirlik"}
+              alt={"İletişim"}
             />
           </div>
         </section>

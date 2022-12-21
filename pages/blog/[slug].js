@@ -1,0 +1,77 @@
+import { Layout } from "../../layout";
+import styles from "../../assets/styles/Blog.module.scss";
+import { CardBlog, Button2, Breadcrumb } from "../../components";
+
+export default function Blog({navlist}) {
+  const breadcrumbList = [
+    {
+      title: 'Anasayfa',
+      href: '/'
+    },
+    {
+      title: 'Sektörler',
+      href: '/'
+    },
+    {
+      title: 'Kimya',
+      href: '/'
+    },
+    {
+      title: "Karıştırıcı ve Reaktör",
+      href: '/'
+    }
+  ]
+  return (
+    <>
+      <Layout navlist={navlist}>
+        <Breadcrumb data={breadcrumbList} />
+        <section className={styles["blog"]}>
+          <h2>Blog</h2>
+          <div className={styles["blog__buttons"]}>
+            <Button2 locale href={"/blog"} text={"Genel"} />
+            <Button2 locale href={"/blog"} text={"Fuar"} />
+          </div>
+          <div className={styles["blog__select"]}>
+            <select defaultValue={'default'}>
+              <option disabled value={'default'}>Kategori Seçiniz</option>
+              <option value={'Genel'}>Genel</option>
+              <option value={'Fuar'}>Fuar</option>
+            </select>
+          </div>
+          <div className={styles["blog__content"]}>
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+            <CardBlog />
+          </div>
+          <Button2 locale href={"/blog"} text={"Daha fazla"} />
+        </section>
+      </Layout>
+    </>
+  );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr' })
+  }
+
+  const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
+
+
+  return {
+    props: {
+      navlist
+    },
+    revalidate: 10,
+  }
+}

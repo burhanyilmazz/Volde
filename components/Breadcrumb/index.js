@@ -13,9 +13,7 @@ export const Breadcrumb = (props) => {
         data?.map((item, index) => {
           return (
             <li key={index}>
-              <Link href={item.href}>
-                {item.title}
-              </Link>
+              {item.href ? <Link href={item.href}>{item.title}</Link> : item.title}
             </li>
           )
         })

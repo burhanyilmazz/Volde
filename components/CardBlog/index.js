@@ -6,17 +6,17 @@ import Link from 'next/link'
 import styles from './CardBlog.module.scss';
 
 export const CardBlog = (props) => { 
-  const { className } = props;
+  const { className, data, path } = props;
   
   return (
-    <Link href={'#'} className={classNames(styles['card-blog'], className)}>
+    <Link href={path} className={classNames(styles['card-blog'], className)}>
       <figure>
         <picture>
-          <Image src={'/images/img/blog.jpeg'} width={'501'} height={'247'} alt={'Volde Dijital Kütüphane'} />
+          <Image src={data.image} width={'501'} height={'247'} alt={data.title} />
         </picture>
         <figcaption>
           <span>10 Ağustos 2022</span>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <h3>{data.title}</h3>
           <div className={styles['arrow']} />
         </figcaption>
       </figure>

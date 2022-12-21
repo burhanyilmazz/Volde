@@ -25,8 +25,9 @@ import { Layout } from '../layout'
 import styles from '../assets/styles/Home.module.scss'
 import { Button, Button2, CardBlog, Card, Carousel, ScrollIcon } from '../components';
 import Link from 'next/link'
+import slug from 'slug'
 
-export default function Home({navlist, sliders, mainpage}) {
+export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
 
   useEffect(() => {
     const myElement = document.querySelector('header');
@@ -50,6 +51,9 @@ export default function Home({navlist, sliders, mainpage}) {
     const headroom  = new Headroom(myElement, options);
     headroom.init();
   }, [])
+
+  const blogDetailUrl = '/blog-detay';
+  const sectorDetailUrl = '/sektor-detay';
 
   return (
     <>
@@ -76,18 +80,20 @@ export default function Home({navlist, sliders, mainpage}) {
         <section className={styles['sector']}>
           <div className='container-fluid'>
             <h2><span>7</span> farklı sektörde <span>100</span>`den fazla çözüm sunuyoruz.</h2>
-            <h3><Image src={'/images/icons/filter.svg'} alt='Sektörle / Çözümler' width={'65'} height={'65'} /> Sektörler / Çözümler</h3>
+            <h3>Sektörler / Çözümler</h3>
 
             <div className={styles['sector__tabs']}>
               <Tabs className={styles['tabs']} selectedTabClassName={styles['tab--selected']}>
                 <TabList>
-                  <Tab className={styles['tab']}>
-                    <div className={styles['tab__item']}>
-                      <div><Image src={'/images/icons/chemical.svg'} alt='Kimya' width={'39'} height={'69'} /></div>
-                      <span>Kimya</span>
-                    </div>
-                  </Tab>
-                  <Tab className={styles['tab']}>
+                  {
+                    sectors.map((item, index) => <Tab key={index} className={styles['tab']}>
+                      <div className={styles['tab__item']}>
+                        <div><Image src={item.icon_image} alt={item.title} width={'39'} height={'69'} /></div>
+                        <span>{item.title}</span>
+                      </div>
+                    </Tab> )
+                  }
+                  {/* <Tab className={styles['tab']}>
                     <div className={styles['tab__item']}>
                       <div><Image src={'/images/icons/detergent.svg'} alt='Deterjan' width={'51'} height={'70'} /></div>
                       <span>Deterjan</span>
@@ -122,131 +128,48 @@ export default function Home({navlist, sliders, mainpage}) {
                       <div><Image src={'/images/icons/food.svg'} alt='Gıda & Yem' width={'67'} height={'66'} /></div>
                       <span>Gıda & Yem</span>
                     </div>
-                  </Tab>
+                  </Tab> */}
                 </TabList>
 
-                <TabPanel className={styles['tab__content']}>
-                  <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
-                <TabPanel className={styles['tab__content']}>
-                  <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
-                <TabPanel className={styles['tab__content']}>
-                <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
-                <TabPanel className={styles['tab__content']}>
-                <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
-                <TabPanel className={styles['tab__content']}>
-                <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
-                <TabPanel className={styles['tab__content']}>
-                  <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
-                <TabPanel className={styles['tab__content']}>
-                <div className={styles['card-list']}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                  </div>
-                </TabPanel>
+                {
+                  sectors.map((item, index) => {
+                    return (
+                      <TabPanel key={index} className={styles['tab__content']}>
+                        <div className={styles['card-list']}>
+                          {item?.contents?.map((content, i) => <Card title={content.title} image={content.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}/${slug(content.title)}-${item.id}-${content.id}`} key={i} /> )}
+                        </div>
+                      </TabPanel>
+                    )
+                  })
+                }
               </Tabs>
             </div>
           </div>
 
-          <div className={styles['sector__accordion']}>
-            <Accordion allowZeroExpanded preExpanded={["1"]}>
-              <AccordionItem uuid="1" className={styles['accordion']}>
-                  <AccordionItemHeading>
-                      <AccordionItemButton>
-                        <div className={styles['accordion__item']}>
-                          <div><Image src={'/images/icons/chemical.svg'} alt='Kimya' width={'39'} height={'69'} /></div>
-                          <span>Kimya</span>
+         <div className={styles['sector__accordion']}>
+            <Accordion allowZeroExpanded preExpanded={["0"]}>
+              {
+                sectors.map((item, index) => {
+                  return ( 
+                    <AccordionItem key={index} uuid={index} className={styles['accordion']}>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>
+                          <div className={styles['accordion__item']}>
+                            <div><Image src={item.icon_image} alt={item.title} width={'39'} height={'69'} /></div>
+                            <span>{item.title}</span>
+                          </div>
+                        </AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel className={styles['accordion__panel']}>
+                        <div className={styles['card-list']}>
+                          {item?.contents?.map((content, i) => <Card title={content.title} image={content.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}/${slug(content.title)}-${item.id}-${content.id}`} key={i} /> )}
                         </div>
-                      </AccordionItemButton>
-                  </AccordionItemHeading>
-                  <AccordionItemPanel className={styles['accordion__panel']}>
-                    <div className={styles['card-list']}>
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                      <Card />
-                    </div>
-                  </AccordionItemPanel>
-              </AccordionItem>
-
-              <AccordionItem uuid="2" className={styles['accordion']}>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  )
+                })
+              }
+              {/* <AccordionItem uuid="2" className={styles['accordion']}>
                   <AccordionItemHeading>
                       <AccordionItemButton>
                         <div className={styles['accordion__item']}>
@@ -400,7 +323,7 @@ export default function Home({navlist, sliders, mainpage}) {
                     <Card />
                   </div>
                 </AccordionItemPanel>
-              </AccordionItem>
+              </AccordionItem> */}
           </Accordion>
           </div>
         </section>
@@ -427,10 +350,10 @@ export default function Home({navlist, sliders, mainpage}) {
           <div  className={styles['block__content']}>
           <h2 dangerouslySetInnerHTML={{__html: mainpage.section4_title}} />
             <div className={styles['block__text']} dangerouslySetInnerHTML={{__html: mainpage.section4_content}} /> 
-            <Button text={'Devamı...'} locale href={'#'} className={styles['block__button']} />
+            <Button text={'Devamı...'} locale href={mainpage.section4_url} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
-            <Image src={'/images/home/surdurulebilirlik.jpg'} width={'940'} height={'1080'} alt={'Sürdürülebilirlik'} />
+            <Image src={mainpage.section4_image} width={'940'} height={'1080'} alt={mainpage.section4_title} />
           </div>
         </section>
 
@@ -442,7 +365,7 @@ export default function Home({navlist, sliders, mainpage}) {
 
               <div className={styles['group-buttons']}>
                 <Button2 button icon={'arrow'} className={styles['prev']} />
-                <Button2 button icon={'arrow'} className={styles['next']}/>
+                <Button2 button icon={'arrow'} className={styles['next']} />
               </div>
             </div>
           </div>
@@ -458,16 +381,7 @@ export default function Home({navlist, sliders, mainpage}) {
               pagination
               className={'blog__carousel'}
             >
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
-              <SwiperSlide><CardBlog /></SwiperSlide>
+              {blog10.map((item, index) => <SwiperSlide key={index}><CardBlog data={item} path={`${blogDetailUrl}/${slug(item.title)}-${item.id}-${item.id}`} /></SwiperSlide>)}
             </Swiper>
           </div>
         </section>
@@ -489,13 +403,16 @@ export async function getStaticProps() {
   const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
   const sliders = await fetch(`${process.env.API_URL}/sliders`, options).then(r => r.json()).then(data => data.Result);
   const mainpage = await fetch(`${process.env.API_URL}/mainpage`, options).then(r => r.json()).then(data => data.Result);
-
+  const blog10 = await fetch(`${process.env.API_URL}/blog10`, options).then(r => r.json()).then(data => data.Result);
+  const sectors = await fetch(`${process.env.API_URL}/sectors`, options).then(r => r.json()).then(data => data.Result);
 
   return {
     props: {
       navlist,
       sliders,
-      mainpage
+      mainpage,
+      blog10,
+      sectors
     },
     revalidate: 10,
   }

@@ -6,16 +6,16 @@ import Link from 'next/link'
 import styles from './Card.module.scss';
 
 export const Card = (props) => { 
-  const { className } = props;
+  const { className, title, image, path } = props;
   
   return (
-    <Link href={'#'} className={classNames(styles['card'], className)}>
+    <Link href={path} className={classNames(styles['card'], className)}>
       <figure>
         <picture>
-          <Image src={'/images/img/blog.jpeg'} width={'330'} height={'320'} alt={'Volde Dijital Kütüphane'} />
+          <Image src={image} width={'330'} height={'320'} alt={title} />
         </picture>
         <figcaption>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+          <h3>{title}</h3>
           <div className={styles['arrow']} />
         </figcaption>
       </figure>
@@ -25,4 +25,7 @@ export const Card = (props) => {
 
 Card.propTypes = {
 	className: PropTypes.string,
+	title: PropTypes.string,
+	image: PropTypes.string,
+	path: PropTypes.string,
 };

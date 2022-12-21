@@ -35,27 +35,27 @@
       color: #8c8f95;
       display: inline-flex;
       align-items: center;
+    }
 
-      &::after {
-        position: absolute;
-        content: "";
-        width: 5px;
-        height: 5px;
-        background: rgba($color: #8c8f95, $alpha: 0.4);
-        border-radius: 100%;
-        right: -15px;
-        top: 7\3px;
-      }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: rgba($color: #8c8f95, $alpha: 0.4);
+      border-radius: 100%;
+      right: -15px;
+      top: 6px;
     }
 
     &:last-child {
       color: #000;
       a {
         color: #000;
+      }
 
-        &::after {
-          display: none;
-        }
+      &::after {
+        display: none;
       }
     }
   }

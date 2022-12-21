@@ -45,6 +45,7 @@ export default function BlogDetail({navlist, blogs, blog, blogCat}) {
                 width={"906"}
                 height={"486"}
                 alt={blog.title}
+                priority
               />
             </div> }
             

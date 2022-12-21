@@ -29,3 +29,7 @@ Card.propTypes = {
 	image: PropTypes.string,
 	path: PropTypes.string,
 };
+
+Card.defaultProps = {
+	path: '#',
+};

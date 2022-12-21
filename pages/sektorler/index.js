@@ -103,12 +103,12 @@ export default function Sector({navlist}) {
         <section className={styles['systems']}>
           <h2>İlgili Sistemler</h2>
           <div className={styles['card-list']}>
-            {/* <Card />
             <Card />
             <Card />
             <Card />
             <Card />
-            <Card /> */}
+            <Card />
+            <Card />
           </div>
         </section>
       </Layout>

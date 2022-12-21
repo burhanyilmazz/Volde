@@ -51,6 +51,9 @@ export const Sidebar = (props) => {
     }
   }
 
+  const sectorDetailUrl = '/sektor';
+  const systemDetailUrl = '/sistem';
+
   return (
     <aside className={classNames(styles['sidebar'], {[styles['sidebar--open']] : isShow })} onClick={(event) => handleOutsideClick(event)}>
       <div className={classNames(styles['search'], {[styles['search--focus']]: search})}>
@@ -75,7 +78,7 @@ export const Sidebar = (props) => {
                         {
                           item.children.map((child, i) => {
                             return (
-                              <li key={i}><Link href={slug(`${item.folder}/${child.title}-${child.id}`)}>{child.title}</Link></li>
+                              <li key={i}><Link href={`/${item.folder}/${slug(child.title)}-${child.id}`}>{child.title}</Link></li>
                             )
                           })
                         }
@@ -115,7 +118,7 @@ export const Sidebar = (props) => {
                       {
                         item?.children?.map((child, i) => {
                           return (
-                            <li key={i}><Link href={slug(`${item.folder}/${child.title}-${child.id}`)}>{child.title}</Link></li>
+                            <li key={i}><Link href={`${sectorDetailUrl}/${slug(child.title)}-${child.id}-${item.id}`}>{child.title}</Link></li>
                           )
                         })
                       }
@@ -144,7 +147,7 @@ export const Sidebar = (props) => {
                       {
                         item?.children?.map((child, i) => {
                           return (
-                            <li key={i}><Link href={slug(`${item.folder}/${child.title}-${child.id}`)}>{child.title}</Link></li>
+                            <li key={i}><Link href={`${systemDetailUrl}/${slug(child.title)}-${child.id}-${item.id}`}>{child.title}</Link></li>
                           )
                         })
                       }

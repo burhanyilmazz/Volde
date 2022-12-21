@@ -12,11 +12,11 @@ export const CardBlog = (props) => {
     <Link href={path} className={classNames(styles['card-blog'], className)}>
       <figure>
         <picture>
-          <Image src={data.image} width={'501'} height={'247'} alt={data.title} />
+          <Image src={data?.image} width={'501'} height={'247'} alt={data?.title} />
         </picture>
         <figcaption>
           <span>10 Ağustos 2022</span>
-          <h3>{data.title}</h3>
+          <h3>{data?.title}</h3>
           <div className={styles['arrow']} />
         </figcaption>
       </figure>
@@ -26,4 +26,9 @@ export const CardBlog = (props) => {
 
 CardBlog.propTypes = {
 	className: PropTypes.string,
+	path: PropTypes.string,
+};
+
+CardBlog.defaultProps = {
+	path: '#',
 };

@@ -36,6 +36,7 @@ export default function List({navlist}) {
             </div>
 
             <div className={styles['card-list']}>
+              {/* <Card />
               <Card />
               <Card />
               <Card />
@@ -45,8 +46,7 @@ export default function List({navlist}) {
               <Card />
               <Card />
               <Card />
-              <Card />
-              <Card />
+              <Card /> */}
             </div>
           </div>
         </section>

@@ -6,12 +6,12 @@ import {Icon} from ".."
 import styles from './Button2.module.scss';
 
 export const Button2 = (props) => { 
-  const { className, text, locale, href, target, button, onClick, icon } = props;
+  const { className, text, locale, href, target, button, onClick, icon, active } = props;
 
   const handleClick = () => onClick && onClick();
   
   return (
-    <div className={classNames(styles['button'], {[styles['button--icon']]: icon}, className)}>
+    <div className={classNames(styles['button'], {[styles['button--icon']]: icon, [styles['button--active']]: active}, className)}>
       {locale && <Link href={href}><div className={styles['button__content']}>{text}{icon && <Icon icon={'arrow'} />}</div></Link> }
       {!locale && !button && <a href={href} target={target} onClick={handleClick}><div className={styles['button__content']}>{text}{icon && <Icon icon={'arrow'} />}</div></a> }
       {button && !locale && <button onClick={handleClick} aria-label={icon ? 'icon buton' : text}><div className={styles['button__content']}>{text}{icon && <Icon icon={'arrow'} />}</div></button> }
@@ -28,6 +28,7 @@ Button2.propTypes = {
 	locale: PropTypes.bool,
   download: PropTypes.bool,
   button: PropTypes.bool,
+  active: PropTypes.bool,
   onClick: PropTypes.func
 };
 

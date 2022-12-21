@@ -67,8 +67,20 @@
   }
 
   &--icon {
-    a, button {
+    a,
+    button {
       min-width: 94px;
+    }
+  }
+
+  &--active {
+    a,
+    button {
+      color: #fff;
+      &:after {
+        width: 100%;
+        z-index: 2;
+      }
     }
   }
 }

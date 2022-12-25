@@ -11,7 +11,7 @@ export const Library = (props) => {
   return (
     <div className={classNames(styles['library'], className)}>
       <div className={styles['container']}>
-        <h5>Dijital<br />Kütüphane</h5>
+        <span>Dijital<br />Kütüphane</span>
         <p>Güncel ürün kataloğumuz için lütfen aşağıdaki butona tıklayınız.</p>
         <div className={styles['button']}>
           <Button text={'İndir'} href='#' download />

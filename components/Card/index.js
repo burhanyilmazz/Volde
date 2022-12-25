@@ -12,7 +12,7 @@ export const Card = (props) => {
     <Link href={path} className={classNames(styles['card'], className)}>
       <figure>
         <picture>
-          <Image src={image} width={'330'} height={'320'} alt={title} />
+          <Image src={image} width={'330'} height={'320'} alt={title} fetchpriority="high" />
         </picture>
         <figcaption>
           <h3>{title}</h3>

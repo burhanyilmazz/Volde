@@ -12,7 +12,7 @@ export const CardBlog = (props) => {
     <Link href={path} className={classNames(styles['card-blog'], className)}>
       <figure>
         <picture>
-          <Image src={data?.image} width={'501'} height={'247'} alt={data?.title} />
+          <Image src={data?.image} width={'501'} height={'247'} alt={data?.title} fetchpriority="high" />
         </picture>
         <figcaption>
           <span>{new Intl.DateTimeFormat('tr', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(data.created_at))}</span>

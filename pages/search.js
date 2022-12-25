@@ -43,63 +43,66 @@ export default function SearchPage({navlist}) {
         <section className={styles["search"]}>
           <h2>Arama Sonuçları</h2>
           <Search />
-          <h4>Toplam <b>{total}</b> adet sonuç bulunmuştur.</h4>
-          
-          {data?.blogs?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${blogDetailUrl}/${slug(item.title)}-${item.id}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+          {data && <>
+            <h4>Toplam <b>{total}</b> adet sonuç bulunmuştur.</h4>
+            
+            {data?.blogs?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${blogDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
 
-          {data?.corporate?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${corporateFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+            {data?.corporate?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${corporateFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
 
-          {data?.sector_contents?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${sectorDetailUrl}/${slug(item.title)}-${item.id}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+            {data?.sector_contents?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${sectorDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
 
-          {data?.sectors?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${sectorsFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+            {data?.sectors?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${sectorsFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
 
-          {data?.services?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${servicesFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+            {data?.services?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${servicesFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
 
-          {data?.system_contents?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+            {data?.system_contents?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
 
-          {data?.systems?.map((item,index) => <div className={styles["item"]} key={index}>
-            <div className={styles["content"]}>
-              <h3>{item.title}</h3>
-              <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
-            </div>
-            <Link href={`${systemsFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
-          </div> )}
+            {data?.systems?.map((item,index) => <div className={styles["item"]} key={index}>
+              <div className={styles["content"]}>
+                <h3>{item.title}</h3>
+                <div className={styles["text"]} dangerouslySetInnerHTML={{__html: item.content}} />
+              </div>
+              <Link href={`${systemsFolder}/${slug(item.title)}-${item.id}`}>Sayfaya Git <Icon icon='arrow' /></Link>
+            </div> )}
+
+          </> }
         </section>
       </Layout>
     </>

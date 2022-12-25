@@ -28,7 +28,7 @@ export const Carousel = (props) => {
           renderBullet: (index, className) => {
             const slides = document.querySelectorAll('.carousel .swiper-slide');
 
-            return '<span class="' + className + '"><img src="' + slides[index].dataset.thumb + '" alt="slide-thumb"></span>';
+            return '<span class="' + className + '"><img src="' + slides[index].dataset.thumb + '" alt="slide-thumb" fetchpriority="high" loading="lazy"></span>';
           },
         }}
         className={classNames('carousel', className)}
@@ -40,7 +40,7 @@ export const Carousel = (props) => {
             <div className={styles['slide-content__hand']}>
               <picture>
                 <source media="(max-width: 1024px)" srcSet={item.second_image_mobile} />
-                <Image src={item.second_image} width={1920} height={751} alt={item.title} priority={index === 0 ? true : false} />
+                <Image src={item.second_image} width={1920} height={751} alt={item.title} priority={index === 0 ? true : false} fetchpriority="high" />
               </picture>
             </div>
           </div>

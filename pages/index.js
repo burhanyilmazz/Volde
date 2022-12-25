@@ -74,7 +74,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
             <Button text={'Devamı...'} locale href={mainpage.section1_url} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
-            <Image src={mainpage.section1_image} width={'940'} height={'1080'} alt={mainpage.section1_title} />
+            <Image src={mainpage.section1_image} width={'940'} height={'1080'} alt={mainpage.section1_title} fetchpriority="high" />
           </div>
         </section>
 
@@ -89,7 +89,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
                   {
                     sectors.map((item, index) => <Tab key={index} className={styles['tab']}>
                       <div className={styles['tab__item']}>
-                        <div><Image src={item.icon_image} alt={item.title} width={'39'} height={'69'} /></div>
+                        <div><Image src={item.icon_image} alt={item.title} width={'39'} height={'69'} fetchpriority="high" /></div>
                         <span>{item.title}</span>
                       </div>
                     </Tab> )
@@ -152,7 +152,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
             <Button text={'Devamı...'} locale href={mainpage.section3_url} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
-            <Image src={mainpage.section3_image} width={'940'} height={'1080'} alt={mainpage.section3_title} />
+            <Image src={mainpage.section3_image} width={'940'} height={'1080'} alt={mainpage.section3_title} fetchpriority="high" />
           </div>
         </section>
 
@@ -163,7 +163,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
             <Button text={'Devamı...'} locale href={mainpage.section4_url} className={styles['block__button']} />
           </div>
           <div className={styles['block__image']}>
-            <Image src={mainpage.section4_image} width={'940'} height={'1080'} alt={mainpage.section4_title} />
+            <Image src={mainpage.section4_image} width={'940'} height={'1080'} alt={mainpage.section4_title} fetchpriority="high" />
           </div>
         </section>
 

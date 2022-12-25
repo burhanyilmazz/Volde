@@ -38,7 +38,7 @@ export default function Sector({navlist, sector, sectorCat}) {
             <div className={"block__text"} dangerouslySetInnerHTML={{__html: sector.content}} />
           </div>
           <div className={"block__image"}>
-            {sector.sliders && <CarouselSector data={sector.sliders} title={sector.title} /> }
+            {sector?.sliders && <CarouselSector data={sector.sliders} title={sector.title} /> }
           </div>
         </section>
         
@@ -51,7 +51,7 @@ export default function Sector({navlist, sector, sectorCat}) {
               alt={sector.title}
             />
           </div> }
-          {/* <h2>Karıştırıcı ve Reaktör</h2> */}
+          {sector.section1_title && <h2>{sector.section1_title}</h2> }
           {sector.section1_content && <div className={"block__text"} dangerouslySetInnerHTML={{__html: sector.section1_content}} /> }
 
           {sector.section2_image && <div className={styles["product__img"]}>
@@ -62,37 +62,37 @@ export default function Sector({navlist, sector, sectorCat}) {
               alt={sector.title}
             />
           </div> }
-          {/* <h2>Karıştırıcı ve Reaktör</h2> */}
+          {sector.section2_title && <h2>{sector.section2_title}</h2> }
           {sector.section2_content && <div className={"block__text"} dangerouslySetInnerHTML={{__html: sector.section2_content}} /> }
 
           <div className={styles["product__content"]}>
-            <div className={styles["product__image"]}>
+            {sector.content_image1 && <div className={styles["product__image"]}>
               <Image
                 src={sector.content_image1}
                 width={"770"}
                 height={"500"}
                 alt={sector.title}
               />
-            </div>
-            <div className={styles["product__image"]}>
+            </div> }
+            {sector.content_image2 && <div className={styles["product__image"]}>
               <Image
                 src={sector.content_image2}
                 width={"770"}
                 height={"500"}
                 alt={sector.title}
               />
-            </div>
+            </div>}
           </div>
 
           <Information />
         </section>
 
-        <section className={styles['systems']}>
+        {sectorCat?.contents.length > 0 && <section className={styles['systems']}>
           <h2>İlgili Sektörler</h2>
           <div className={styles['card-list']}>
             {sectorCat?.contents?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}-${sectorCat.id}`} /> )}
           </div>
-        </section>
+        </section> }
       </Layout>
     </>
   );

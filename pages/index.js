@@ -381,7 +381,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
               pagination
               className={'blog__carousel'}
             >
-              {blog10.map((item, index) => <SwiperSlide key={index}><CardBlog data={item} path={`${blogDetailUrl}/${slug(item.title)}-${item.id}-${item.id}`} /></SwiperSlide>)}
+              {blog10.map((item, index) => <SwiperSlide key={index}><CardBlog data={item} path={`${blogDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /></SwiperSlide>)}
             </Swiper>
           </div>
         </section>

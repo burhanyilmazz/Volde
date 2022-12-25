@@ -21,6 +21,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: clamp(40px, 8vw, 134px);
+  padding-bottom: 47px;
 
   @media screen and (max-width: 1024px) {
     padding-top: 40px;

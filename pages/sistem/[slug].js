@@ -51,7 +51,7 @@ export default function System({navlist, system, systemCat}) {
               alt={system.title}
             />
           </div> }
-          {/* <h2>Karıştırıcı ve Reaktör</h2> */}
+          {system.section1_title && <h2>{system.section1_title}</h2> }
           {system.section1_content && <div className={"block__text"} dangerouslySetInnerHTML={{__html: system.section1_content}} /> }
 
           {system.section2_image && <div className={styles["product__img"]}>
@@ -62,37 +62,37 @@ export default function System({navlist, system, systemCat}) {
               alt={system.title}
             />
           </div> }
-          {/* <h2>Karıştırıcı ve Reaktör</h2> */}
+          {system.section2_title && <h2>{system.section2_title}</h2> }
           {system.section2_content && <div className={"block__text"} dangerouslySetInnerHTML={{__html: system.section2_content}} /> }
 
           <div className={styles["product__content"]}>
-            <div className={styles["product__image"]}>
+            {system.content_image1 && <div className={styles["product__image"]}>
               <Image
                 src={system.content_image1}
                 width={"770"}
                 height={"500"}
                 alt={system.title}
               />
-            </div>
-            <div className={styles["product__image"]}>
+            </div> }
+            {system.content_image2 && <div className={styles["product__image"]}>
               <Image
                 src={system.content_image2}
                 width={"770"}
                 height={"500"}
                 alt={system.title}
               />
-            </div>
+            </div> }
           </div>
 
           <Information />
         </section>
 
-        <section className={styles['systems']}>
+        {systemCat?.contents.length > 0 && <section className={styles['systems']}>
           <h2>İlgili Sistemler</h2>
           <div className={styles['card-list']}>
             {systemCat?.contents?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${systemCat.id}`} /> )}
           </div>
-        </section>
+        </section> }
       </Layout>
     </>
   );

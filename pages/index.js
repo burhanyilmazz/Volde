@@ -139,7 +139,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
         </section>
 
         <section className={styles['video']}>
-          <video width="1920" height="1080" autoPlay muted loop>
+          <video width="1920" height="1080" autoPlay muted loop fetchpriority="high">
             <source src={mainpage.section2_video || '/video/volde-video.mp4'} type="video/mp4" />
             Your browser does not support the video tag.
           </video>

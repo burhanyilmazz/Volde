@@ -31,14 +31,12 @@
 
 .title {
   margin-bottom: 30px;
-  h5 {
-    font-size: clamp(24px, 1.9vw, 30px);
-    line-height: 32px;
-    font-weight: 200;
-    span {
-      font-weight: 500;
-      display: block;
-    }
+  font-size: clamp(24px, 1.9vw, 30px);
+  line-height: 32px;
+  font-weight: 200;
+  span {
+    font-weight: 500;
+    display: block;
   }
 }
 

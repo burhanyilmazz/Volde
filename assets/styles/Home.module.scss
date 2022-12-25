@@ -50,7 +50,7 @@
     background: url("/images/line-2.svg") right bottom #fff no-repeat;
     padding: 200px 170px;
     width: 50%;
-    background-size: clamp(300px, 30vw, 600px);
+    background-size: clamp(300px, 25vw, 600px);
 
     @media screen and (max-width: 1366px) {
       padding-right: 100px;

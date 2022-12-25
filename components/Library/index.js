@@ -18,7 +18,7 @@ export const Library = (props) => {
         </div>
       </div>
       <div className={styles['image']}>
-        <Image src={'/images/footer/digital.png'} width={'224'} height={'273'} alt={'Volde Dijital Kütüphane'} />
+        <Image src={'/images/footer/digital.png'} width={'224'} height={'273'} alt={'Volde Dijital Kütüphane'} fetchpriority="high" />
       </div>
     </div>
   )

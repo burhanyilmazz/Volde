@@ -41,7 +41,7 @@ export const Newsletter = (props) => {
     <div className={classNames(styles['newsletter'], className)}>
       <div className={styles['container']}>
         <div className={styles['title']}>
-          <h5>Gelişmelerden <span>Haberdar Olun!</span></h5>
+          Gelişmelerden <span>Haberdar Olun!</span>
         </div>
         <form onSubmit={formik.handleSubmit} noValidate>
           <div className={styles['form-input']}>
@@ -59,7 +59,7 @@ export const Newsletter = (props) => {
         </form>
       </div>
       <div className={styles['image']}>
-        <Image src={'/images/footer/newsletter.png'} width={'324'} height={'380'} alt={'Volde E-Bülten'} />
+        <Image src={'/images/footer/newsletter.png'} width={'324'} height={'380'} alt={'Volde E-Bülten'} fetchpriority="high" />
       </div>
     </div>
   )

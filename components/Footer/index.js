@@ -62,7 +62,7 @@ export const Footer = ({navlist}) => {
             </ul>
           </div>
           <div className={styles['fikirmod']}>
-            <a href='https://wwww.fikirmod.com.tr' target='_blank' title='Fikirmod' rel="noreferrer"><Image src={'/images/fikirmod.svg'} width={20} height={23} alt='Fikirmod' /></a>
+            <a href='https://wwww.fikirmod.com.tr' target='_blank' title='Fikirmod' rel="noreferrer"><Image src={'/images/fikirmod.svg'} width={20} height={23} alt='Fikirmod' fetchpriority="high" /></a>
           </div>
         </div>
       </footer>

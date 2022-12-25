@@ -3,6 +3,7 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
 import { CarouselSector, Information, LeftNav, Breadcrumb, Card } from "../../components";
 import slug from 'slug'
+import classNames from 'classnames'
 
 export default function System({navlist, system, systemCat}) {
   const navDataParent = navlist?.find(item => item.type === 'systems')

@@ -15,7 +15,7 @@ export const CardBlog = (props) => {
           <Image src={data?.image} width={'501'} height={'247'} alt={data?.title} />
         </picture>
         <figcaption>
-          <span>10 Ağustos 2022</span>
+          <span>{new Intl.DateTimeFormat('tr', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(data.created_at))}</span>
           <h3>{data?.title}</h3>
           <div className={styles['arrow']} />
         </figcaption>

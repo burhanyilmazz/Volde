@@ -3,9 +3,13 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/Blog.module.scss";
 import { CardBlog, Button2, Breadcrumb } from "../../components";
 import slug from 'slug'
+import { useState } from 'react';
 
-export default function Blog({navlist, blogs}) {
+export default function Blog({navlist, blogs, blogspagination}) {
   const router = useRouter()
+  const [blogList, setBlogList] = useState(blogspagination?.blogs)
+  const [page, setPage] = useState(1)
+  const [moreButton, setMoreButton] = useState(blogList?.length > 8)
 
   const breadcrumbList = [
     {
@@ -21,6 +25,28 @@ export default function Blog({navlist, blogs}) {
 
   const handleOnChange = (event) => {
     router.push({ pathname : event.target.value })
+  }
+
+  const handleClick = async () => {
+    setMoreButton(false)
+    const blogOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ language: 'tr', cat_id: 0, page: page + 1 })
+    }
+
+    await fetch(`${process.env.API_URL}/blogspagination`, blogOptions)
+      .then(r => r.json())
+      .then(data => {
+        setPage(page + 1)
+        const blogs = blogList;
+        blogs.push(...data.Result.blogs)
+
+        setMoreButton(true)
+        setBlogList([...blogs])
+      })
   }
 
   return (
@@ -39,9 +65,9 @@ export default function Blog({navlist, blogs}) {
             </select>
           </div>
           <div className={styles["blog__content"]}>
-            { blogs.map(item => item?.blogs.map((blog, i) => <CardBlog key={i} data={blog} path={`${blogDetailUrl}/${slug(blog.title)}-${blog.id}-${item.id}`} />))}
+            { blogList.map((blog, i) => <CardBlog key={i} data={blog} path={`${blogDetailUrl}/${slug(blog.title)}-${blog.id}-${blog.cat_id}`} />)}
           </div>
-          {/* <Button2 locale href={"/blog"} text={"Daha fazla"} /> */}
+          {moreButton && <Button2 button text={"Daha fazla"} onClick={handleClick} /> }
         </section>
       </Layout>
     </>
@@ -57,13 +83,23 @@ export async function getStaticProps() {
     body: JSON.stringify({ language: 'tr' })
   }
 
+  const blogOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr', cat_id: 0, page: 1 })
+  }
+
   const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
   const blogs = await fetch(`${process.env.API_URL}/blogs`, options).then(r => r.json()).then(data => data.Result);
+  const blogspagination = await fetch(`${process.env.API_URL}/blogspagination`, blogOptions).then(r => r.json()).then(data => data.Result);
 
   return {
     props: {
       navlist,
-      blogs
+      blogs,
+      blogspagination
     },
     revalidate: 10,
   }

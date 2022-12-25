@@ -12,7 +12,8 @@ const nextConfig = {
       domains: ['volde.ozanuzer.com']
    },
    env: {
-      API_URL: 'https://volde.ozanuzer.com/api'
+      API_URL: 'https://volde.ozanuzer.com/api',
+      HOST_URL: 'https://volde.vercel.app'
    },
 }
 

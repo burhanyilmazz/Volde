@@ -10,16 +10,16 @@ export default function Career({navlist, hrcontents}) {
     <>
       <Layout navlist={navlist}>
         {
-          hrcontents.map((item, index) => {
+          hrcontents?.contents?.map((item, index) => {
             return (
               <section key={index} className={styles["career"]}>
                 <div className={styles["career__content"]}>
                   <h2>{item.title}</h2>
                   <div className={"block__text"} dangerouslySetInnerHTML={{__html: item.content}} />
                 </div>
-                {index === 0 && <div className={styles["career__image"]}>
+                {index === 0 && hrcontents?.image && <div className={styles["career__image"]}>
                   <Image
-                    src={"/images/img/kariyer.png"}
+                    src={hrcontents.image}
                     width={"940"}
                     height={"1080"}
                     alt={"İnsan Kaynakları"}
@@ -29,7 +29,6 @@ export default function Career({navlist, hrcontents}) {
             )
           })
         }
-        
         
         <section className={classNames(styles["career"], styles['career-form'])}>
           <ContactForm

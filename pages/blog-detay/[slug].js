@@ -7,8 +7,10 @@ import styles from "../../assets/styles/Blog-detail.module.scss";
 import { CardBlog, GalleryImage, ShareMedia, Modal, Breadcrumb } from "../../components";
 import Link from "next/link";
 
-export default function BlogDetail({navlist, blogs, blog, blogCat}) {
+export default function BlogDetail({navlist, blogs, blog, blogCat, popular}) {
   const [modalImage, setModalImage] = useState();
+
+  const blogDetailUrl = '/blog-detay';
 
   const breadcrumbList = [
     {
@@ -36,7 +38,7 @@ export default function BlogDetail({navlist, blogs, blog, blogCat}) {
           <div className={styles["blog-detail__block"]}>
             <div className={styles["blog-detail__title"]}>
               <h2>{blog.title}</h2>
-              <h3>10 Ağustos 2022<br /> <span>{blogCat.title}</span></h3>
+              <h3>{new Intl.DateTimeFormat('tr', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(blog.created_at))}<br /> <span>{blogCat.title}</span></h3>
             </div>
 
             {blog.image && <div className={styles["blog-detail__image"]}>
@@ -71,11 +73,10 @@ export default function BlogDetail({navlist, blogs, blog, blogCat}) {
                 </li> )}
               </ul>
             </div>
-            <div className={styles["right-nav__popular"]}>
+            {popular && <div className={styles["right-nav__popular"]}>
               <h4>Popüler Haberler</h4>
-              {/* <div><CardBlog /></div>
-              <div><CardBlog /></div> */}
-            </div>
+              {popular.map((item, index) => <div key={index}><CardBlog data={item} path={`${blogDetailUrl}/${slug(item.title)}-${item.id}-${blogCat.id}`} /></div> )}
+            </div> }
           </div>
           { modalImage && <Modal onClose={() => setModalImage('')}>
             <Image
@@ -127,8 +128,17 @@ export async function getStaticProps(ctx) {
 
   const navlist = await fetch(`${process.env.API_URL}/navi`, options).then(r => r.json()).then(data => data.Result);
   const blogs = await fetch(`${process.env.API_URL}/blogs`, options).then(r => r.json()).then(data => data.Result);
+  const popular = await fetch(`${process.env.API_URL}/blogs/populer`, options).then(r => r.json()).then(data => data.Result);
   const blogCat = blogs.find(item => item?.id == catid);
   const blog = blogCat?.blogs?.find(item => item?.id == id )
+
+  await fetch(`${process.env.API_URL}/blogs/counter`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ language: 'tr', blog_id: id })
+  })
 
   return {
     props: {
@@ -136,6 +146,7 @@ export async function getStaticProps(ctx) {
       blogs,
       blog,
       blogCat,
+      popular
     },
     revalidate: 10,
   }

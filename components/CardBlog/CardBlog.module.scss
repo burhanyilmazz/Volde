@@ -35,11 +35,19 @@
   position: relative;
   width: 100%;
   display: block;
-  border: 1px solid #e8e8e8;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0px 10px 30px rgba($color: #000000, $alpha: 0.1);
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 212px;
+    background-image: url("/images/shadow.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: -110px;
+    left: 0;
+    z-index: 1;
+  }
 
   span {
     color: #4a4f54;
@@ -74,6 +82,12 @@
 
   figure {
     padding-top: calc(9 / 16 * 100%);
+    position: relative;
+    z-index: 2;
+    border: 1px solid #e8e8e8;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fff;
   }
 
   picture {
@@ -109,19 +123,20 @@
       height: 200px;
     }
   }
+  @media (hover: hover) {
+    &:hover {
+      .arrow {
+        width: 60px;
+        bottom: 30px;
+      }
 
-  &:hover {
-    .arrow {
-      width: 60px;
-      bottom: 30px;
-    }
+      figcaption {
+        transform: translateY(-20px);
+      }
 
-    figcaption {
-      transform: translateY(-20px);
-    }
-
-    h3 {
-      color: #e1251b;
+      h3 {
+        color: #e1251b;
+      }
     }
   }
 }

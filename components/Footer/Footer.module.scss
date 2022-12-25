@@ -2,7 +2,7 @@
   position: relative;
   background: url("/images/line.svg") 10px bottom no-repeat #f2f2f2;
   background-size: calc(100% - 170px);
-  z-index: 9;
+  z-index: 999;
   @media screen and (max-width: 1366px) {
     background-size: calc(100% - 100px);
   }
@@ -217,7 +217,7 @@
   background: #f2f2f2;
   gap: 5px;
   position: relative;
-  z-index: 9;
+  z-index: 9999;
 
   @media screen and (max-width: 1024px) {
     flex-wrap: wrap;

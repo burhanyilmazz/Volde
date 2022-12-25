@@ -3,6 +3,7 @@ import { Layout } from "../../layout";
 import styles from "../../assets/styles/Sector.module.scss";
 import { CarouselSector, Information, LeftNav, Breadcrumb, Card } from "../../components";
 import slug from 'slug'
+import classNames from 'classnames'
 
 export default function Sector({navlist, sector, sectorCat}) {
   const navDataParent = navlist?.find(item => item.type === 'sectors')
@@ -30,9 +31,9 @@ export default function Sector({navlist, sector, sectorCat}) {
   return (
     <>
       <Layout navlist={navlist}>
-        <LeftNav data={navDataChild} />
+        <LeftNav data={navDataChild} folder={sectorDetailUrl} />
         <Breadcrumb data={breadcrumbList} unmobile />
-        <section className={"block"}>
+        <section className={classNames("block", styles['sector-content'])}>
           <div className={"block__content"}>
             <h2>{sector.title}</h2>
             <div className={"block__text"} dangerouslySetInnerHTML={{__html: sector.content}} />

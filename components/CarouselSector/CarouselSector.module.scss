@@ -1,7 +1,8 @@
 .carousel {
-  position: relative;
+  position: sticky;
   width: 100%;
   overflow: hidden;
+  top: 0;
 
   &__big {
     position: relative;

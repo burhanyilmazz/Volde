@@ -104,6 +104,10 @@
   height: 100%;
   z-index: 3;
 
+  @media screen and (max-width: 1366px) {
+    z-index: 99;
+  }
+
   @media screen and (max-width: 1280px) {
     display: none;
   }

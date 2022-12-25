@@ -30,9 +30,9 @@ export default function System({navlist, system, systemCat}) {
   return (
     <>
       <Layout navlist={navlist}>
-        <LeftNav data={navDataChild} />
-        <Breadcrumb data={breadcrumbList} unmobile />
-        <section className={"block"}>
+        <LeftNav data={navDataChild} folder={systemDetailUrl} />
+        <Breadcrumb data={breadcrumbList} unmobile  />
+        <section className={classNames("block", styles['sector-content'])}>
           <div className={"block__content"}>
             <h2>{system.title}</h2>
             <div className={"block__text"} dangerouslySetInnerHTML={{__html: system.content}} />

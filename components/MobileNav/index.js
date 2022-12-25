@@ -25,7 +25,9 @@ export const MobileNav = (props) => {
     setChildList(null)
     setGrandList(null)
   }, [isShow])
-  
+
+  const sectorDetailUrl = '/sektor';
+  const systemDetailUrl = '/sistem';
 
   return (
     <aside className={classNames(styles['sidebar'], {[styles['sidebar--open']] : isShow })}>
@@ -85,7 +87,7 @@ export const MobileNav = (props) => {
                     </li>
                   )
                 }
-                return <li key={index}><Link href={`${childList.folder}/${slug(item.title)}-${item.id}`}>{item.title}</Link></li>
+                return <li key={index}><Link href={`/${childList.folder}/${slug(item.title)}-${item.id}`}>{item.title}</Link></li>
               })
             }
           </ul>
@@ -101,8 +103,9 @@ export const MobileNav = (props) => {
           <ul>
             {
               grandList?.children.map((item, index) => {
+                const url = childList.type === 'sectors' ? sectorDetailUrl : systemDetailUrl;
                 return (
-                  <li key={index}><Link href={`${childList.folder}/${slug(grandList.title)}/${slug(item.title)}-${item.id}-${grandList.id}`}>{item.title}</Link></li>
+                  <li key={index}><Link href={`${url}/${slug(item.title)}-${item.id}-${grandList.id}`}>{item.title}</Link></li>
                 )
               })
             }

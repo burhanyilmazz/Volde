@@ -9,9 +9,7 @@
   z-index: 3;
 
   @media screen and (max-width: 1366px) {
-    left: 50%;
-    margin-left: -20px;
-    right: auto;
+    display: none;
   }
 
   span {

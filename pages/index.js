@@ -58,6 +58,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
   return (
     <>
       <Layout navlist={navlist}>
+        <div className={styles['more']}>more is possible</div>
         <section className={styles['carousel']}>
           <Carousel data={sliders} />
           <ScrollIcon className={styles['scroll']} />
@@ -66,7 +67,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
           </div>
         </section>
 
-        <section className={styles['block']}>
+        <section className={classNames(styles['block'], styles['block--first'])}>
           <div  className={styles['block__content']}>
             <h2 dangerouslySetInnerHTML={{__html: mainpage.section1_title}} />
             <div className={styles['block__text']} dangerouslySetInnerHTML={{__html: mainpage.section1_content}} />

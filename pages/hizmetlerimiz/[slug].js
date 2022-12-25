@@ -31,13 +31,13 @@ export default function Service({navlist, services}) {
             <div className={"block__text"} dangerouslySetInnerHTML={{__html: services.content}} />
           </div>
           <div className={"block__image"}>
-            <Image
+            {services.image && <Image
               src={services.image}
               width={"940"}
               height={"1080"}
               alt={services.title}
               priority
-            />
+            />}
           </div>
         </section>
       </Layout>

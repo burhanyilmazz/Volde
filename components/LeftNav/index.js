@@ -7,9 +7,10 @@ import slug from 'slug'
 import styles from './LeftNav.module.scss';
 
 export const LeftNav = (props) => { 
-  const { data, title } = props;
+  const { data, title, folder } = props;
   const router = useRouter()
   const id = router.query.slug.split('-').slice(-1)[0];
+  const id2 = router.query.slug.split('-').slice(-2)[0];
 
   return (
     <div className={classNames(styles['left-nav'])}>
@@ -25,7 +26,10 @@ export const LeftNav = (props) => {
       <div className={styles['content']}>
         <h3>{title || data?.title}</h3>
         <ul>
-          { data?.children?.map((item, index) => <li key={index}><Link href={`/${data.folder}/${slug(item.title)}-${item.id}`} className={classNames({[styles['active']]: id == item.id})} >{item.title}</Link></li>)}
+          { data?.children?.map((item, index) => {
+            const url =  folder ? `${folder}/${slug(item.title)}-${item.id}-${data.id}` : `/${data.folder}/${slug(item.title)}-${item.id}`
+            return <li key={index}><Link href={url} className={classNames({[styles['active']]: id == item.id || id2 == item.id})} >{item.title}</Link></li>
+          })}
         </ul>
       </div>
     </div>
@@ -35,4 +39,5 @@ export const LeftNav = (props) => {
 LeftNav.propTypes = {
 	data: PropTypes.object,
 	title: PropTypes.object,
+	folder: PropTypes.string,
 };

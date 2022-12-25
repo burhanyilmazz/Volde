@@ -2,7 +2,7 @@
   width: 27%;
   height: 100%;
   position: absolute;
-  padding: 220px 60px 60px;
+  padding: 160px 60px 40px;
   transition: all 0.5s ease;
   transform: translateX(300%);
 
@@ -94,7 +94,7 @@
     transition-delay: 0.4s;
 
     nav {
-      height: calc(100% - 200px);
+      height: calc(100% - 110px);
       ul {
         font-size: clamp(20px, 1.6vw, 26px);
         gap: clamp(30px, 3vw, 60px);
@@ -147,7 +147,7 @@
 .language {
   display: flex;
   gap: 20px;
-  font-size: clamp(16px, 1.4vw, 20px);
+  font-size: 12px;
   font-weight: 400;
   margin-left: 30px;
 
@@ -157,8 +157,8 @@
     justify-content: center;
     background: #e0e0e0;
     border-radius: 10px;
-    width: clamp(60px, 5vw, 84px);
-    height: clamp(60px, 5vw, 84px);
+    width: clamp(30px, 5vw, 42px);
+    height: clamp(30px, 5vw, 42px);
     color: #000;
 
     &:hover {
@@ -174,7 +174,7 @@
 .social-media {
   position: absolute;
   left: 90px;
-  bottom: 80px;
+  bottom: 40px;
   a {
     color: #4a4f54 !important;
   }
@@ -201,7 +201,10 @@
   }
 
   &--focus {
-    width: calc((33.333% * 3) - 110px);
+    width: calc((27% * 3) - 170px);
+    @media screen and (max-width: 1366px) {
+      width: calc((33.333% * 3) - 110px);
+    }
   }
 }
 

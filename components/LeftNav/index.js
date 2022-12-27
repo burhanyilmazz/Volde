@@ -11,6 +11,7 @@ export const LeftNav = (props) => {
   const router = useRouter()
   const id = router.query.slug.split('-').slice(-1)[0];
   const id2 = router.query.slug.split('-').slice(-2)[0];
+  const pageId = id2 ? id2 : id;
 
   return (
     <div className={classNames(styles['left-nav'])}>
@@ -28,7 +29,7 @@ export const LeftNav = (props) => {
         <ul>
           { data?.children?.map((item, index) => {
             const url =  folder ? `${folder}/${slug(item.title)}-${item.id}-${data.id}` : `/${data.folder}/${slug(item.title)}-${item.id}`
-            return <li key={index}><Link href={url} className={classNames({[styles['active']]: id == item.id || id2 == item.id})} >{item.title}</Link></li>
+            return <li key={index}><Link href={url} className={classNames({[styles['active']]: pageId == item.id})} >{item.title}</Link></li>
           })}
         </ul>
       </div>

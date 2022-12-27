@@ -91,7 +91,7 @@ export default function System({navlist, system, systemCat}) {
         {systemCat?.contents.length > 0 && <section className={styles['systems']}>
           <h2>İlgili Sistemler</h2>
           <div className={styles['card-list']}>
-            {systemCat?.contents?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${systemCat.id}`} /> )}
+            {systemCat?.contents?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${systemCat.id}`} /> )}
           </div>
         </section> }
       </Layout>

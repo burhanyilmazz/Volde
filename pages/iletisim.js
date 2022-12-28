@@ -63,7 +63,7 @@ export default function Communication({navlist}) {
             <div className={styles["communication__title"]}>
               İletişim<span></span>
             </div>
-            <h2>Merkez Ofis</h2>
+            <h2>Genel Müdürlük</h2>
             <div className={styles["communication__information"]}>
               <ul>
                 <li>

@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 import { Button } from "..";
 import styles from "./Information.module.scss";
 
@@ -13,7 +11,7 @@ export const Information = () => {
       <Button
         text={"İletişim"}
         locale
-        href={"#"}
+        href={'/iletisim'}
         className={styles["block__button"]}
       />
     </div>

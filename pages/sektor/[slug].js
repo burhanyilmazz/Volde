@@ -8,6 +8,7 @@ import classNames from 'classnames'
 export default function Sector({navlist, sector, sectorCat}) {
   const navDataParent = navlist?.find(item => item.type === 'sectors')
   const navDataChild = navDataParent?.children[0];
+  const systemDetailUrl = '/sistem';
   const sectorDetailUrl = '/sektor';
 
   const breadcrumbList = [
@@ -88,10 +89,10 @@ export default function Sector({navlist, sector, sectorCat}) {
           <Information />
         </section>
 
-        {sectorCat?.contents.length > 0 && <section className={styles['systems']}>
-          <h2>İlgili Sektörler</h2>
+        {sector?.relations && <section className={styles['systems']}>
+          <h2>İlgili Sistemler</h2>
           <div className={styles['card-list']}>
-            {sectorCat?.contents?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}-${item.id}-${sectorCat.id}`} /> )}
+            {sector?.relations?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /> )}
           </div>
         </section> }
       </Layout>

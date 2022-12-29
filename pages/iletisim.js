@@ -15,7 +15,7 @@ export default function Communication({navlist}) {
   const contact = [
     {
       id: 1,
-      coordinate: { lat: 40.9842221, lng: 28.882086 }
+      coordinate: { lat: 41.006239, lng: 29.1620259 }
     },
   ]
 
@@ -51,7 +51,7 @@ export default function Communication({navlist}) {
       //map.fitBounds(bounds);
 
       map.setCenter(bounds.getCenter());
-      map.setZoom(12);
+      map.setZoom(13);
     });
   });
 
@@ -68,7 +68,7 @@ export default function Communication({navlist}) {
               <ul>
                 <li>
                   <Icon icon={'location'} />
-                  <span>Esenşehir Mh. Natoyolu Cd. İlkyaz Sk. Kartal Plaza No:24-28 34776 Ümraniye / İSTANBUL</span>
+                  <span>Esenşehir Mah. İlkyaz Sk. Kartal Plaza No:24-28 Kat:2 Ümraniye - İstanbul  / Türkiye </span>
                 </li>
                 <li>
                   <Icon icon={'phone'} />

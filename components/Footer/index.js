@@ -52,7 +52,7 @@ export const Footer = ({navlist}) => {
             <Logo />
           </div>
           <div className={styles['copyright']}>
-            Copyright &copy; 2022 VOLDE Tüm hakları saklıdır.
+            2022 &copy; Volde, Bu sitede kullanılan tüm görseller kendi imalatlarımız olup tüm hakları saklıdır.
           </div>
           <div className={styles['policy']}>
             <ul>

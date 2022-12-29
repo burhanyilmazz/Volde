@@ -410,6 +410,10 @@ ul {
       font-weight: 300 !important;
       font-family: "Gotham", sans-serif !important;
       text-align: left !important;
+
+      &:empty {
+        display: none;
+      }
     }
 
     b {
@@ -428,10 +432,11 @@ ul {
       }
     }
 
-    ul {
+    ul, ol {
       list-style: disc;
       padding-left: 20px;
       margin-top: 20px;
+      margin-bottom: 20px;
 
       li {
         font-size: clamp(14px, 1.2vw, 18px) !important;
@@ -443,6 +448,10 @@ ul {
           padding-bottom: 0;
         }
       }
+    }
+
+    ol {
+      list-style: decimal;
     }
   }
 

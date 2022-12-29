@@ -46,11 +46,16 @@
     height: auto;
   }
 
+  @media screen and (max-height: 640px) {
+    height: auto;
+  }
+
   &__content {
-    background: url("/images/line-2.svg") right bottom #fff no-repeat;
+    background: #fff;
     padding: 200px 170px;
+    padding-top: clamp(70px, 8vw, 200px);
+    padding-bottom: clamp(70px, 8vw, 200px);
     width: 50%;
-    background-size: clamp(300px, 25vw, 600px);
 
     @media screen and (max-width: 1366px) {
       padding-right: 100px;
@@ -64,14 +69,13 @@
 
     @media screen and (max-width: 1024px) {
       width: 100%;
-      background-image: none;
       padding-top: 70px;
       padding-bottom: 70px;
     }
 
     h2 {
-      font-size: clamp(36px, 3.5vw, 56px);
-      line-height: clamp(46px, 4vw, 67px);
+      font-size: clamp(36px, 2.8vw, 56px);
+      line-height: clamp(46px, 3.1vw, 67px);
       font-weight: 300;
 
       span {
@@ -81,20 +85,20 @@
   }
 
   &__text {
-    font-size: clamp(16px, 1.5vw, 22px) !important;
-    line-height: clamp(26px, 2.5vw, 34px) !important;
+    font-size: clamp(16px, 1.3vw, 22px) !important;
+    line-height: clamp(26px, 2vw, 34px) !important;
     font-weight: 300 !important;
-    margin-top: clamp(30px, 3vw, 48px);
+    margin-top: clamp(30px, 2.2vw, 48px);
 
     * {
-      font-size: clamp(16px, 1.5vw, 22px) !important;
-      line-height: clamp(26px, 2.5vw, 34px) !important;
+      font-size: clamp(16px, 1.3vw, 22px) !important;
+      line-height: clamp(26px, 2vw, 34px) !important;
       font-weight: 300 !important;
     }
   }
 
   &__button {
-    margin-top: clamp(60px, 5vw, 90px);
+    margin-top: clamp(60px, 3vw, 90px);
     display: inline-flex;
   }
 
@@ -407,7 +411,7 @@
   padding-bottom: clamp(70px, 8.5vw, 175px);
   z-index: 2;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -27,12 +27,16 @@
     line-height: 28px;
     letter-spacing: clamp(5px, 2vw, 13px);
     text-align: center;
+    position: relative;
+    z-index: 2;
   }
 
   &__text {
     margin-top: 22px;
     text-align: center;
     width: 100%;
+    z-index: 2;
+    position: relative;
 
     img {
       max-width: 40%;
@@ -48,6 +52,7 @@
     position: absolute;
     width: 100%;
     bottom: 0;
+    z-index: 1;
 
     img {
       width: 100%;

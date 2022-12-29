@@ -22,6 +22,10 @@ export const CarouselSector = (props) => {
         <Swiper 
           thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
           modules={[Thumbs, Pagination, Autoplay]}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
           autoHeight
           slidesPerView={1}
           pagination={{

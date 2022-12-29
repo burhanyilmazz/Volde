@@ -9,6 +9,7 @@ export default function System({navlist, system, systemCat}) {
   const navDataParent = navlist?.find(item => item.type === 'systems')
   const navDataChild = navDataParent?.children[0];
   const systemDetailUrl = '/sistem';
+  const sectorDetailUrl = '/sektor';
 
   const breadcrumbList = [
     {
@@ -88,10 +89,10 @@ export default function System({navlist, system, systemCat}) {
           <Information />
         </section>
 
-        {systemCat?.contents.length > 0 && <section className={styles['systems']}>
-          <h2>İlgili Sistemler</h2>
+        {system?.relations && <section className={styles['systems']}>
+          <h2>İlgili Sektörler</h2>
           <div className={styles['card-list']}>
-            {systemCat?.contents?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${systemCat.id}`} /> )}
+            {system?.relations?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /> )}
           </div>
         </section> }
       </Layout>

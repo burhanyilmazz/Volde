@@ -7,7 +7,7 @@ import classNames from 'classnames'
 
 export default function System({navlist, system, systemCat}) {
   const navDataParent = navlist?.find(item => item.type === 'systems')
-  const navDataChild = navDataParent?.children[0];
+  const navDataChild = navDataParent?.children.find(item => item.id == systemCat.id);
   const systemDetailUrl = '/sistem';
   const sectorDetailUrl = '/sektor';
 

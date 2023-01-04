@@ -148,10 +148,10 @@ herhangi birisine yöneltebilir.</p>
           </div>
           <div className={"block__image"}>
             <Image
-              src={'/images/img/hizmet.png'}
+              src={'/images/content/bilgi-guvenligi.png'}
               width={"940"}
               height={"1080"}
-              alt={'Çerez Politikası'}
+              alt={'Kişisel Verilerin Korunması'}
               priority
             />
           </div>

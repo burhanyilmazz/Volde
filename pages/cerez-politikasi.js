@@ -73,7 +73,7 @@ yaptıkları tercihleri her zaman değiştirebilmeleri mümkündür.</p>
           </div>
           <div className={"block__image"}>
             <Image
-              src={'/images/img/hizmet.png'}
+              src={'/images/content/cerez-politikasi.png'}
               width={"940"}
               height={"1080"}
               alt={'Çerez Politikası'}

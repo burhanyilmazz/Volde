@@ -15,7 +15,7 @@ export default function Communication({navlist}) {
   const contact = [
     {
       id: 1,
-      coordinate: { lat: 41.006239, lng: 29.1620259 }
+      coordinate: { lat: 41.0124123, lng: 29.1643235 }
     },
   ]
 
@@ -94,7 +94,7 @@ export default function Communication({navlist}) {
           <div className={styles["communication__form"]}>
             <ContactForm 
               title="İletişim Formu" 
-              text={'Lorem Ipsum is simply dummy typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.'} 
+              text={'Görüş ve önerileriniz için aşağıdaki iletişim formumuz aracılığı ile bizimle iletişime geçebilirsiniz.'} 
             />
           </div>
           <div className={styles["communication__maps"]}>

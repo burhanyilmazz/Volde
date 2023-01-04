@@ -14,7 +14,7 @@ export const Library = (props) => {
         <span>Dijital<br />Kütüphane</span>
         <p>Güncel ürün kataloğumuz için lütfen aşağıdaki butona tıklayınız.</p>
         <div className={styles['button']}>
-          <Button text={'İndir'} href='#' download />
+          <Button text={'İndir'} href='/pdf/VOLDE-Dosing-Systems.pdf' download />
         </div>
       </div>
       <div className={styles['image']}>

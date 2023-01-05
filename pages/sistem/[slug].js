@@ -92,7 +92,7 @@ export default function System({navlist, system, systemCat}) {
         {system?.relations && <section className={styles['systems']}>
           <h2>İlgili Sektörler</h2>
           <div className={styles['card-list']}>
-            {system?.relations?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /> )}
+            {system?.relations?.map((item, index) => <Card key={index} category={systemCat.title} title={item.title} image={item.listing_image} path={`${sectorDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /> )}
           </div>
         </section> }
       </Layout>

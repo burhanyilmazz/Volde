@@ -41,7 +41,7 @@ export const Search = (props) => {
       <form onSubmit={formik.handleSubmit} noValidate>
         <div className={styles['input']}>
           <FormInput 
-            field={'Ne aramıştınız'} 
+            field={'Ne aramıştınız?'} 
             name={'keyword'} 
             type="text" 
             required={true}

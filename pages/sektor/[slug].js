@@ -92,7 +92,7 @@ export default function Sector({navlist, sector, sectorCat}) {
         {sector?.relations && <section className={styles['systems']}>
           <h2>İlgili Sistemler</h2>
           <div className={styles['card-list']}>
-            {sector?.relations?.map((item, index) => <Card key={index} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /> )}
+            {sector?.relations?.map((item, index) => <Card key={index} category={sectorCat.title} title={item.title} image={item.listing_image} path={`${systemDetailUrl}/${slug(item.title)}-${item.id}-${item.cat_id}`} /> )}
           </div>
         </section> }
       </Layout>

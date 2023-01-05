@@ -101,7 +101,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
                     return (
                       <TabPanel key={index} className={styles['tab__content']}>
                         <div className={styles['card-list']}>
-                          {item?.contents?.map((content, i) => <Card title={content.title} image={content.listing_image} path={`${sectorDetailUrl}/${slug(content.title)}-${content.id}-${item.id}`} key={i} /> )}
+                          {item?.contents?.map((content, i) => <Card category={item.title} title={content.title} image={content.listing_image} path={`${sectorDetailUrl}/${slug(content.title)}-${content.id}-${item.id}`} key={i} /> )}
                         </div>
                       </TabPanel>
                     )
@@ -127,7 +127,7 @@ export default function Home({navlist, sliders, mainpage, blog10, sectors}) {
                       </AccordionItemHeading>
                       <AccordionItemPanel className={styles['accordion__panel']}>
                         <div className={styles['card-list']}>
-                          {item?.contents?.map((content, i) => <Card title={content.title} image={content.listing_image} path={`${sectorDetailUrl}/${slug(content.title)}-${content.id}-${item.id}`} key={i} /> )}
+                          {item?.contents?.map((content, i) => <Card category={item.title} title={content.title} image={content.listing_image} path={`${sectorDetailUrl}/${slug(content.title)}-${content.id}-${item.id}`} key={i} /> )}
                         </div>
                       </AccordionItemPanel>
                     </AccordionItem>

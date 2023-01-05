@@ -15,7 +15,7 @@ export default function Communication({navlist}) {
   const contact = [
     {
       id: 1,
-      coordinate: { lat: 41.0124123, lng: 29.1643235 }
+      coordinate: { lat: 41.0062198, lng: 29.1620945 }
     },
   ]
 
@@ -43,9 +43,7 @@ export default function Communication({navlist}) {
 
         bounds.extend(marker.position);
 
-        marker.addListener("click", () => {
-          window.open(`https://www.google.com/maps/dir//${item.coordinate.lat},${item.coordinate.lng}`, '_blank');
-        });
+        marker.addListener("click", () => window.open(`https://goo.gl/maps/ZHwoxLAn4msx5rS18`, '_blank'));
       })
 
       //map.fitBounds(bounds);

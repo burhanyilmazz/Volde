@@ -81,14 +81,14 @@
 
 .systems {
   background: #f8f7f7;
-  padding: 170px;
+  padding: 100px 170px;
 
   @media screen and (max-width: 1366px) {
-    padding: 170px 100px;
+    padding: 100px;
   }
 
   @media screen and (max-width: 1280px) {
-    padding: 120px 36px;
+    padding: 100px 36px;
   }
 
   @media screen and (max-width: 1024px) {

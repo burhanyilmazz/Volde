@@ -13,6 +13,7 @@ export const Layout = ({navlist, children}) => {
 
   useEffect(() => {
     document.querySelector('html').classList.remove('disable-scroll')
+    document.body.classList.remove("paddless");
   }, [])
 
   const handleOnClickNav = (event) => {

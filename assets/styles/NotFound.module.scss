@@ -1,0 +1,28 @@
+.notfound {
+  background: #F8F7F7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 35px;
+
+  h1 {
+    color: #1A1818;
+    font-weight: 300;
+    font-size: clamp(28px, 4vw, 46px);
+    margin-top: 20px;
+  }
+}
+
+.button {
+  margin-top: clamp(30px, 8vw, 90px);
+}
+
+.image {
+  margin-top: clamp(80px, 8vw, 140px);
+  img {
+    max-width: 100%;
+  }
+}

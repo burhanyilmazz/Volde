@@ -16,7 +16,7 @@ body {
   min-height: -webkit-fill-available;
 
   &.paddless {
-    padding: 0;
+    padding: 0 !important;
   }
 
   @media screen and (max-width: 1366px) {

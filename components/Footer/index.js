@@ -52,7 +52,7 @@ export const Footer = ({navlist}) => {
             <Logo />
           </div>
           <div className={styles['copyright']}>
-            2022 &copy; Volde, Bu sitede kullanılan tüm görseller kendi imalatlarımız olup tüm hakları saklıdır.
+            2022 &copy; VOLDE, Bu sitede kullanılan tüm görseller kendi imalatlarımız olup tüm hakları saklıdır.
           </div>
           <div className={styles['policy']}>
             <ul>
@@ -62,7 +62,7 @@ export const Footer = ({navlist}) => {
             </ul>
           </div>
           <div className={styles['fikirmod']}>
-            <a href='https://wwww.fikirmod.com.tr' target='_blank' title='Fikirmod' rel="noreferrer"><Image src={'/images/fikirmod.svg'} width={20} height={23} alt='Fikirmod' fetchpriority="high" /></a>
+            <a href='https://www.fikirmod.com.tr' target='_blank' title='Fikirmod' rel="noreferrer"><Image src={'/images/fikirmod.svg'} width={20} height={23} alt='Fikirmod' fetchpriority="high" /></a>
           </div>
         </div>
       </footer>

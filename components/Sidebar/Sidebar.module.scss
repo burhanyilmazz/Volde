@@ -180,7 +180,17 @@
   }
   i {
     &:before {
-      font-size: 24px;
+      font-size: 20px;
+    }
+  }
+
+  li {
+    &:last-child {
+      i {
+        &:before {
+          font-size: 18px;
+        }
+      }
     }
   }
 }
